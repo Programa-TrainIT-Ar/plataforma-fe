@@ -1,5 +1,11 @@
 # TrainIT-Web Poject
 
+
+Primera Tarea: Search Bar 
+Asignados: Gino Gallardo y Exequiel Bobruk.
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
