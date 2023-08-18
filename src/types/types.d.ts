@@ -30,6 +30,7 @@ import {
     LayoutType,
     SortOrderType
 } from './demo';
+export {Medal} from "./medals"
 
 type ChildContainerProps = {
     children: ReactNode;

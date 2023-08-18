@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
 
-export function useFetch(url: RequestInfo | URL) {
-    const [data, setData] = useState(null)
+export function useFetch(apiFunction: Function ) {
+    const [data, setData] = useState <any>(null)
 
     useEffect(() => {
-        fetch(url)
-        .then((response: Response) => response.json())
+        apiFunction()
         .then((data: any) => setData(data));
-      }, [url])
+      }, [apiFunction])
 
     return {data};
 }

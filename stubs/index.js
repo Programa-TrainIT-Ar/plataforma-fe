@@ -1,9 +1,11 @@
 const users = require("./data/users")
+const medals = require("./data/medal")
 
 module.exports = () => {
-    const data = { users: [] }
+
 
     return {
-        users
+        users,
+        medals
     }
 }
