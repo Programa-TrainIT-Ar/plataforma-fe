@@ -36,7 +36,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Plataforma",
         "edition": "Primera Edición",
         "description": "Plataforma TrainIT",
@@ -44,31 +44,30 @@
         "lider": "Mariano Alcaraz",
         "cells": [
           {
-            "cell1":{
               "id": 1,
               "name": "Frontend",
               "lider": "Leonardo",
               "description": "desarrollo frontend"
             },
-            "cell2":{
+           {
               "id": 2,
               "name": "Backend",
               "lider": "Leonardo",
               "description": "desarrollo backend"
             },
-            "cell3":{
+            {
               "id": 3,
               "name": "QA",
               "lider": "Leonardo",
               "description": "pruebas con QA"
             },
-            "cell4":{
+            {
               "id": 4,
               "name": "Bussines",
               "lider": "Leonardo",
               "description": "desarrollo front end"
             }
-          }
+          
         ]
       }
   ]
