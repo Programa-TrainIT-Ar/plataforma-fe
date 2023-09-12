@@ -11,7 +11,7 @@ export default function ButtonModules() {
       ProductService.getCellModules().then((data) => setProducts(data));
   }, []);      
 
-  const itemTemplate = (data) => {
+  const itemTemplate = ( data ) => {
       return (
         <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
           <Button className="p-button-icon-only pl-5 pr-5 m-1">{data.name}</Button>

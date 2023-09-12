@@ -40,7 +40,7 @@
         "name": "Plataforma",
         "edition": "Primera Edición",
         "description": "Plataforma TrainIT",
-        "image": "black-watch.jpg",
+        "image": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-js-d394a.appspot.com/o/image%2FtrainIT-logo.jpg?alt=media&token=205fb10b-88c7-48c4-bed7-ae707c38674b",
         "lider": "Mariano Alcaraz",
         "cells": [
           {
