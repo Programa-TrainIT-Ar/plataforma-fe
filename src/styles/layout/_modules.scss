@@ -1,0 +1,31 @@
+.cardModule{
+  margin: .5em;
+  background-color: #fafafa;
+  border-radius: .7em;
+  box-shadow: rgba(5, 5, 15, .5);
+  transition: all ease 1s;
+  &:hover{
+    box-shadow: 1px 1px 20px -10px black;
+  }
+}
+
+.titleModule{
+  font-size: 1em;
+  transition: all ease 1s;
+  &:hover{
+    scale: 1.1;
+    text-decoration: underline;
+  }
+}
+
+.cellButton{
+  background-color: black !important;
+  border: none !important;
+  transition: all ease 2s;
+  &:hover{
+    color: black !important;
+    background-color: #fafafa !important;
+    border: solid .1em black !important;
+    scale: 1.1;
+  }
+}

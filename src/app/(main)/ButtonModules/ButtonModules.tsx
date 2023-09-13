@@ -13,13 +13,13 @@ export default function ButtonModules() {
 
   const itemTemplate = ( data ) => {
       return (
-        <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-          <Button className="p-button-icon-only pl-5 pr-5 m-1">{data.name}</Button>
+        <div className=" flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+          <Button className="cellButton m-1">{data.name}</Button>
         </div>
       );
   };
   return (
-    <div className="p-card ">
+    <div className="p-card p-2">
       <h6>Celulas :</h6>
         <DataView value={products} itemTemplate={itemTemplate} />
     </div>
