@@ -6,7 +6,6 @@ import { DataView } from 'primereact/dataview';
 import ButtonModules from '../ButtonModules/ButtonModules';
 import Link from 'next/link'
 import { useRouter } from "next/navigation";
-import "../../../styles/layout/_modules.scss";
 
 export default function Modules() {
     const [products, setProducts] = useState([]);
@@ -20,7 +19,7 @@ export default function Modules() {
     const itemTemplate = (data) => {
         return (
             <div className="cardModule col-12">
-                <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+                <div className="cardmodule-text flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
                     <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${data.image}`} alt={data.name} />
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
@@ -35,7 +34,7 @@ export default function Modules() {
                             </div>
                             <div><h5 className="font-semibold">{data.edition}</h5></div>
                         </div>
-                        <div className="flex sm:flex-column align-items-center sm:align-items-end sm:gap-2">
+                        <div className="cardModule-cell flex sm:flex-column align-items-center sm:align-items-end sm:gap-2">
                             <ButtonModules/>
                         </div>
                     </div>
