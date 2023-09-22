@@ -23,24 +23,26 @@ export default function Modules() {
 
   const itemTemplate = (data) => {
     return (
-      <div className="cardmodule-text w-full">
-        <div className='flex  align-items-center justify-content-between'>
-          <h2>{data.name}</h2>
-          <p>{data.edition}</p>
-        </div>
-        <p className="m-0">
-          {data.description}
-        </p>
-        <div className='flex flex-wrap gap-4 justify-content-center m-5'>
-          {data.cells.map((cell, i) => {
-            console.log(cell);
-            return (
-              <>
-                <Card className="p-card w-5" title={`${cell.name}`} key={i} subTitle={`${cell.lider}`} ></Card>
-              </>
-            )
-          })}
+      <div className='cardmodule col-12'>
+        <div className="cardmodule-text flex flex-column xl:flex-row xl:align-items-start gap-4">
+          <div className='flex flex-column col-4 align-items-center justify-content-between'>
+            <h2>{data.name}</h2>
+            <p>{data.edition}</p>
+            <p className="m-0">
+            {data.description}
+          </p>
+          </div>
+          <div className='flex flex-wrap col-7 gap-1 justify-content-end'>
+            {data.cells.map((cell, i) => {
+              console.log(cell);
+              return (
+                <>
+                  <Card className="p-card" title={`${cell.name}`} key={i} subTitle={`${cell.lider}`} ></Card>
+                </>
+              )
+            })}
 
+          </div>
         </div>
       </div>
     );

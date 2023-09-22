@@ -19,7 +19,7 @@ export default function Modules() {
     const itemTemplate = (data) => {
         return (
             <div className="cardModule col-12">
-                <div className="cardmodule-text flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+                <div className="cardmodule-text flex flex-column xl:flex-row xl:align-items-start p-2 gap-4">
                     <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${data.image}`} alt={data.name} />
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
