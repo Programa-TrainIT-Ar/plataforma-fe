@@ -1,17 +1,16 @@
 
 'use client'
 import React, { useState, useEffect } from 'react';
-import { ProductService } from '../../../../src/demo/service/ProductService';
 import { DataView } from 'primereact/dataview';
 import ButtonModules from '../ButtonModules/ButtonModules';
 import Link from 'next/link'
-import { useRouter } from "next/navigation";
+import { ModulesService } from '../../../demo/service/ModulesService';
 
-export default function Modules() {
-    const [products, setProducts] = useState([]);
+export default function Module() {
+    const [modules, setModules] = useState([]);
 
     useEffect(() => {
-        ProductService.getModules().then((data) => setProducts(data));
+        ModulesService.getModules().then((data) => setModules(data));
     }, []); 
 
 
@@ -45,7 +44,7 @@ export default function Modules() {
 
     return (
         <div className="card">
-            <DataView value={products} itemTemplate={itemTemplate} />
+            <DataView value={modules} itemTemplate={itemTemplate} />
         </div>
     )
 }
