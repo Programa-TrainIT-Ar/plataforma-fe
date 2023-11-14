@@ -1,17 +1,20 @@
 
 'use client'
 import React, { useState, useEffect } from 'react';
-import { ProductService } from '../../../../src/demo/service/ProductService';
+import { ModulesService } from '../../service/ModulesService';
 import { DataView } from 'primereact/dataview';
-import ButtonModules from '../ButtonModules/ButtonModules';
+import ButtonModules from '../../../components/ButtonModules/ButtonModules';
 import Link from 'next/link'
 import { useRouter } from "next/navigation";
 
+import { Image } from 'primereact/image';
+        
 export default function Modules() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        ProductService.getModules().then((data) => setProducts(data));
+        ModulesService.getModules().then((data) => setProducts(data));
+        console.log(products);
     }, []); 
 
 
@@ -20,7 +23,7 @@ export default function Modules() {
         return (
             <div className="col-12">
                 <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
-                    <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${data.image}`} alt={data.name} />
+                    <Image className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`${data.image}`} alt={data.name} />
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                             <Link href={{
@@ -35,7 +38,7 @@ export default function Modules() {
                             <div><h5 className="font-semibold">{data.edition}</h5></div>
                         </div>
                         <div className="flex sm:flex-column align-items-center sm:align-items-end sm:gap-2">
-                            <ButtonModules/>
+                            <ButtonModules modules={data}/>
                         </div>
                        
                     </div>

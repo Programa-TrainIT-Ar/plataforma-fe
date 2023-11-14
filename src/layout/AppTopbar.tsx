@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setTheme } from '../redux/reducer';
+import { RootState } from '../redux/store';
 import Link from 'next/link';
 import { classNames } from 'primereact/utils';
 import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
@@ -11,7 +13,9 @@ const AppTopbar = forwardRef<AppTopBarRef>((props, ref) => {
     const menuButtonRef = useRef(null);
     const topbarMenuRef = useRef(null);
     const topbarMenuButtonRef = useRef(null);
-
+    const dispatch = useDispatch();
+    const theme = useSelector((state: RootState) => state.colorTheme.theme);
+    const newTheme = theme === 'light' ? 'dark' : 'light'; 
     useImperativeHandle(ref, () => ({
         menuButton: menuButtonRef.current,
         topbarMenu: topbarMenuRef.current,
@@ -24,7 +28,9 @@ const AppTopbar = forwardRef<AppTopBarRef>((props, ref) => {
                 <img src={`/layout/images/logo-${layoutConfig.colorScheme !== 'light' ? 'white' : 'dark'}.svg`} width="47.22px" height={'35px'} alt="logo" />
                 <span>Appbitos</span>
             </Link>
-
+            <button onClick={() => dispatch(setTheme(newTheme))}>
+                a
+            </button>
             <button ref={menuButtonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle}>
                 <i className="pi pi-bars" />
             </button>
