@@ -1,74 +1,99 @@
 {
-  "data": [
+  "modules": [
     {
-        "id": 1,
-        "name": "Appbitos",
-        "edition": "Primera Edición",
-        "description": "Aplicacion TrainIT",
-        "image": "bamboo-watch.jpg",
-        "icon": "pi pi-tag",
-        "lider": "Mariano Alcaraz",
-        "cells": [
-          {
-              "id": 1,
-              "name": "Frontend",
-              "lider": "Leonardo",
-              "description": "desarrollo frontend"
-          },
-          {
-              "id": 2,
-              "name": "Backend",
-              "lider": "Leonardo",
-              "description": "desarrollo backend"
-          },
-          {
-              "id": 3,
-              "name": "QA",
-              "lider": "Leonardo",
-              "description": "pruebas con QA"
-          },
-          {
-              "id": 4,
-              "name": "Bussines",
-              "lider": "Leonardo",
-              "description": "desarrollo front end"
-          }
-        ]
+      "id": 1,
+      "name": "Appbitos",
+      "edition": "Primera Edición",
+      "description": "Aplicacion TrainIT",
+      "image": "bamboo-watch.jpg",
+      "icon": "pi pi-tag",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
     },
     {
-        "id": 2,
-        "name": "Plataforma",
-        "edition": "Primera Edición",
-        "description": "Plataforma TrainIT",
-        "image": "bracelet.jpg",
-        "lider": "Mariano Alcaraz",
-        "cells": [
-          {
-              "id": 1,
-              "name": "Frontend",
-              "lider": "Leonardo",
-              "description": "desarrollo frontend"
-            },
-          {
-              "id": 2,
-              "name": "Backend",
-              "lider": "Leonardo",
-              "description": "desarrollo backend"
-            },
-            {
-              "id": 3,
-              "name": "QA",
-              "lider": "Leonardo",
-              "description": "pruebas con QA"
-            },
-            {
-              "id": 4,
-              "name": "Bussines",
-              "lider": "Leonardo",
-              "description": "desarrollo front end"
-            }
-          
-        ]
-      }
+      "id": 2,
+      "name": "Plataforma",
+      "edition": "Primera Edición",
+      "description": "Plataforma TrainIT",
+      "image": "bracelet.jpg",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "id": 1,
+      "name": "Frontend",
+      "lider": "Leonardo",
+      "description": "desarrollo frontend"
+    },
+    {
+      "id": 2,
+      "name": "Backend",
+      "lider": "Leonardo",
+      "description": "desarrollo backend"
+    },
+    {
+      "id": 3,
+      "name": "QA",
+      "lider": "Leonardo",
+      "description": "pruebas con QA"
+    },
+    {
+      "id": 4,
+      "name": "Bussines",
+      "lider": "Leonardo",
+      "description": "desarrollo front end"
+    }
   ]
 }

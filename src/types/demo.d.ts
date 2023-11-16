@@ -94,14 +94,8 @@ declare namespace Demo {
         description: string;
         image?: string;
         lider: string;
-        cells?: CellItem[] 
+        cells?: [] 
     };
-    type CellItem = {
-        id?: string;
-        name: string;
-        lider: string;
-        description: string;
-    }
 
     type Product = {
         id?: string;
