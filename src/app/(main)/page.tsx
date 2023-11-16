@@ -4,8 +4,8 @@ import React from "react";
 
 const Dashboard = () => {
     return (
-        <div className="page-app grid">
-                
+        <div className="grid">
+
         </div>
     );
 };

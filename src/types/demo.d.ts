@@ -96,7 +96,6 @@ declare namespace Demo {
         lider: string;
         cells?: [] 
     };
-
     type Product = {
         id?: string;
         code?: string;
