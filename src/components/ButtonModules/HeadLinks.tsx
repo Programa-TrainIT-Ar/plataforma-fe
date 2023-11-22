@@ -5,7 +5,7 @@ export const HeadLinks = () => {
     const theme = useSelector((state: RootState) => state.colorTheme.theme);
     return (
         <head>
-            <link id="theme-css" href={`/themes/lara-${theme}-indigo/theme.css`} rel="stylesheet"></link>
+            <link id="theme-css" href={`/themes/lara-dark-indigo/theme.css`} rel="stylesheet"></link>
         </head>
     );
 };

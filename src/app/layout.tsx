@@ -1,12 +1,19 @@
-import {Metadata} from "next";
-import {LayoutProvider} from "../layout/context/layoutcontext";
+'use client';
 
-import "primereact/resources/primereact.css";
-import "primeflex/primeflex.css";
-import "primeicons/primeicons.css";
-import "../styles/layout/layout.scss";
-import "../styles/demo/Demos.scss";
+import { Metadata } from 'next';
+import { LayoutProvider } from '../layout/context/layoutcontext';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
+import 'primeicons/primeicons.css';
+import '../styles/layout/layout.scss';
+import '../styles/demo/Demos.scss';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
+import { useState } from 'react';
+import { HeadLinks } from '../components/ButtonModules/HeadLinks';
 interface RootLayoutProps {
     children: React.ReactNode;
 }

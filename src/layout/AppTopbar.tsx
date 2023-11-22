@@ -23,21 +23,21 @@ const AppTopbar = forwardRef<AppTopBarRef>((props, ref) => {
     }));
 
     return (
-        <div className="layout-topbar">
+        <div className="layout-topbar flex justify-content-between">
             <Link href="/" className="layout-topbar-logo">
-                <img src={`/layout/images/logo-${layoutConfig.colorScheme !== 'light' ? 'white' : 'dark'}.svg`} width="47.22px" height={'35px'} alt="logo" />
-                <span>Appbitos</span>
+                <img src={`/layout/images/Logo_trainit_color.png`}  alt="logo" />
             </Link>
-            <button onClick={() => dispatch(setTheme(newTheme))}>
-                a
-            </button>
             <button ref={menuButtonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle}>
-                <i className="pi pi-bars" />
+                <i className="pi pi-bars m-1" />
             </button>
 
             <button ref={topbarMenuButtonRef} type="button" className="p-link layout-topbar-menu-button layout-topbar-button" onClick={showProfileSidebar}>
                 <i className="pi pi-ellipsis-v" />
             </button>
+            {/* <button className='flex justify-content-evenly border-round-3xl' type='submit' onClick={() => dispatch(setTheme(newTheme))}>
+            <i className="pi pi-moon m-1"/>
+            <i className="pi pi-sun" />
+            </button> */}
         </div>
     );
 });
