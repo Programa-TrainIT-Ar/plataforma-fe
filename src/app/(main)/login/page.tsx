@@ -21,7 +21,8 @@ const login = () => {
                     </div>
                     <span>¿Olvidaste tu contraseña?</span>
                     <div className="flex flex-wrap align-items-center gap-2">
-                    <Button label="INGRESAR" icon="pi pi-user" className="w-10rem mx-auto  border-round-3xl"></Button>
+                    <Button label="INGRESAR" icon="pi pi-user" className="w-10rem mx-auto  border-round-3xl" ></Button>
+                    <a href="/modulo">ingresar</a>
                     </div>
                 </form>
             </div>
