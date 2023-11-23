@@ -9,8 +9,7 @@
       "estado": "Activo",
       "edition": "Primera Edición",
       "description": "Aplicacion TrainIT",
-      "image": "bamboo-watch.jpg",
-      "icon": "pi pi-tag",
+      "image": "administracion.png",
       "lider": "Mariano Alcaraz",
       "cells": [
         {
@@ -48,7 +47,7 @@
       "estado": "Activo",
       "edition": "Primera Edición",
       "description": "Plataforma TrainIT",
-      "image": "bracelet.jpg",
+      "image": "sistema.png",
       "lider": "Mariano Alcaraz",
       "cells": [
         {
@@ -86,7 +85,7 @@
       "estado": "Activo",
       "edition": "Primera Edición",
       "description": "Plataforma TrainIT",
-      "image": "bracelet.jpg",
+      "image": "marketing.png",
       "lider": "Mariano Alcaraz",
       "cells": [
         {
@@ -124,7 +123,7 @@
       "estado": "Activo",
       "edition": "Primera Edición",
       "description": "Plataforma TrainIT",
-      "image": "bracelet.jpg",
+      "image": "diseño.png",
       "lider": "Mariano Alcaraz",
       "cells": [
         {

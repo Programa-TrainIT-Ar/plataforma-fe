@@ -9,14 +9,14 @@
     "format": "prettier --write \"{components,app,service,api-generator}/**/*.{js,ts,tsx,d.ts}\"",
     "lint": "next lint",
     "stubs": "json-server --watch .\\stubs\\index.js --port 3004 --delay 1000",
-    "fake-api": "json-server --watch public/demo/data/data.json --port 5000"
+    "fake-api": "json-server --watch .\\stubs\\modules.json --port 5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
-    "next": "13.4.8",
+    "next": "^14.0.3",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primereact": "^9.6.0",
