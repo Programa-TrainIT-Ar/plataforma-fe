@@ -1,14 +1,14 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { ModulesService, ProductService } from '../../app/service/ModulesService';
+import { ModulesService,} from '../../service/ModulesService';
 import { Button } from 'primereact/button';
 import { DataView } from 'primereact/dataview';
 
 export default function ButtonModules() {
-  const [products, setProducts] = useState([]);
+  const [modules, setModules] = useState([]);
 
   useEffect(() => {
-     ModulesService.getCellModules().then((data) => setProducts(data));
+    ModulesService.getModules().then((data) => setModules(data));
   }, []);     
 
   const itemTemplate = (data) => {
@@ -21,7 +21,7 @@ export default function ButtonModules() {
   return (
     <div className="p-card ">
       <h6>Celulas :</h6>
-        <DataView value={products} itemTemplate={itemTemplate} />
+        <DataView value={modules} itemTemplate={itemTemplate} />
     </div>
 )
 }

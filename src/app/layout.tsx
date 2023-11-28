@@ -4,8 +4,6 @@ import { Metadata } from 'next';
 import { LayoutProvider } from '../layout/context/layoutcontext';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { Metadata } from 'next';
-import { LayoutProvider } from '../layout/context/layoutcontext';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
@@ -54,3 +52,4 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Provider>
     );
 
+    }
