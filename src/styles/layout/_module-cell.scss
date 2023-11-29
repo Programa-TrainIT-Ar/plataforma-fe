@@ -1,0 +1,15 @@
+.p-card{
+  color: #fff !important;
+  margin: .1em !important;
+  background: linear-gradient(90deg,
+            rgba(106,95,255,.25),
+            rgba(255,94,166,.25)) !important;
+  border: .1em solid rgb(128, 0, 128) !important;
+  backdrop-filter: blur(.2em) !important;
+  border-radius: .7em !important;
+  transition: all ease 1s;
+  &:hover{
+    box-shadow: 0 0 .32em #800080,
+              0 0 1.5em #800080 !important;;
+  }
+}

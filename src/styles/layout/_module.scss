@@ -1,0 +1,73 @@
+
+.cardModule{
+  color: #fafafa !important;
+  margin: .5em;
+  background: linear-gradient(90deg,
+            rgba(106,95,255,.25),
+            rgba(255,94,166,.25));
+  border: .1em solid rgb(128, 0, 128) !important;
+  backdrop-filter: blur(.2em);
+  border-radius: .7em;
+  transition: all ease 1s;
+  &:hover{
+    box-shadow: 0 0 .32em #800080,
+              0 0 1.5em #800080 !important;;
+  }
+}
+.listaModulos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  padding: 2em;
+  flex-wrap: wrap;
+  margin: 1em;
+  box-shadow: 0px 4px 4px 1px #00000040,
+              0px 4px 4px 2px #00000040;
+                  
+}
+.listaModulos:hover{
+  background: linear-gradient(90deg,
+            rgba(106,95,255,.25),
+            rgba(255,94,166,.25));
+            box-shadow: 0 0 .32em #800080,
+              0 0 1.5em #800080;
+}
+
+.cardmodule-text *{
+  color: #fff !important;
+}
+
+.cardModule-cell {
+  background-color: black;
+  border: solid #800080 .1em;
+  border-radius: .3em;
+}
+
+.titleModule{
+  font-size: 1em;
+  color: #fafafa;
+  transition: all ease 1s;
+  &:hover{
+    scale: 1.1;
+    text-decoration: underline;
+  }
+}
+
+.cellButton{
+  background-color: #800080 !important;
+  border: none !important;
+  border-radius: .3em;
+  font-size: 1em;
+  padding: .3em 2em !important;
+  box-shadow: 0 0 .32em #800080,
+              0 0 1.5em #800080;
+  &:hover{
+    box-shadow: 0 0 .32em #800080,
+    0 0 1em #800080,
+    0 0 .5em #800080,
+    0 0 .5em #800080 !important;
+  }
+}
+

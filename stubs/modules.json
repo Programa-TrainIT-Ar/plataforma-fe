@@ -1,0 +1,182 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "name": "Administracion",
+      "creador": "YBastidas",
+      "creacion": "01/05/2023",
+      "inicio": "01/05/2023",
+      "estado": "Activo",
+      "edition": "Primera Edición",
+      "description": "Aplicacion TrainIT",
+      "image": "administracion.png",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sistemas",
+      "creador": "YBastidas",
+      "creacion": "01/05/2023",
+      "inicio": "01/05/2023",
+      "estado": "Activo",
+      "edition": "Primera Edición",
+      "description": "Plataforma TrainIT",
+      "image": "sistema.png",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Marketing",
+      "creador": "YBastidas",
+      "creacion": "01/05/2023",
+      "inicio": "01/05/2023",
+      "estado": "Activo",
+      "edition": "Primera Edición",
+      "description": "Plataforma TrainIT",
+      "image": "marketing.png",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Diseño",
+      "creador": "YBastidas",
+      "creacion": "01/05/2023",
+      "inicio": "01/05/2023",
+      "estado": "Activo",
+      "edition": "Primera Edición",
+      "description": "Plataforma TrainIT",
+      "image": "diseño.png",
+      "lider": "Mariano Alcaraz",
+      "cells": [
+        {
+          "id": 1,
+          "name": "Frontend",
+          "lider": "Leonardo",
+          "description": "desarrollo frontend"
+        },
+        {
+          "id": 2,
+          "name": "Backend",
+          "lider": "Leonardo",
+          "description": "desarrollo backend"
+        },
+        {
+          "id": 3,
+          "name": "QA",
+          "lider": "Leonardo",
+          "description": "pruebas con QA"
+        },
+        {
+          "id": 4,
+          "name": "Bussines",
+          "lider": "Leonardo",
+          "description": "desarrollo front end"
+        }
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "id": 1,
+      "name": "Frontend",
+      "lider": "Leonardo",
+      "description": "desarrollo frontend"
+    },
+    {
+      "id": 2,
+      "name": "Backend",
+      "lider": "Leonardo",
+      "description": "desarrollo backend"
+    },
+    {
+      "id": 3,
+      "name": "QA",
+      "lider": "Leonardo",
+      "description": "pruebas con QA"
+    },
+    {
+      "id": 4,
+      "name": "Bussines",
+      "lider": "Leonardo",
+      "description": "desarrollo front end"
+    }
+  ]
+}

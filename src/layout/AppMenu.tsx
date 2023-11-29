@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import AppMenuitem from './AppMenuitem';
 import { LayoutContext } from './context/layoutcontext';
 import { MenuProvider } from './context/menucontext';
-import Link from 'next/link';
 import { AppMenuItem } from '../types/types';
 
 const AppMenu = () => {
@@ -14,9 +13,10 @@ const AppMenu = () => {
         {
             label: 'Home',
             items: [
-            { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
-            { label: 'Datos del Usuario', icon: 'pi pi-fw pi-user', to: '/user' }
-            ]
+                { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+                { label: 'Login', icon: 'pi pi-user', to: '/login' },
+                { label: 'Crear Modulo', icon: 'pi pi-th-large', to: '/crearModulo' }
+                    ]
         },
     ];
 

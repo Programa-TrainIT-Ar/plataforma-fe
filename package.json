@@ -8,14 +8,13 @@
     "start": "next start",
     "format": "prettier --write \"{components,app,service,api-generator}/**/*.{js,ts,tsx,d.ts}\"",
     "lint": "next lint",
-    "stubs": "json-server --watch ./stubs/index.js --port 3004 --delay 1000",
-    "mocks": "nodemon --watch mocks --exec node ./mocks/server.js"
+    "stubs": "json-server --watch .\\stubs\\index.js --port 3004 --delay 1000",
+    "fake-api": "json-server --watch .\\stubs\\modules.json --port 5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
-    "@types/react-dom": "18.2.5",
     "@types/react-redux": "^7.1.30",
     "next": "13.4.8",
     "primeflex": "^3.3.1",
@@ -28,6 +27,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
+    "@types/node": "20.3.1",
+    "@types/react": "18.2.12",
+    "@types/react-dom": "18.2.5",
     "dyson": "^4.1.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",

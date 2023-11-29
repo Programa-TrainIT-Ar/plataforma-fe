@@ -87,6 +87,15 @@ declare namespace Demo {
     }
 
     //ProductService
+    type Module = {
+        id?: string;
+        name: string;
+        edition: string;
+        description: string;
+        image?: string;
+        lider: string;
+        cells?: [] 
+    };
     type Product = {
         id?: string;
         code?: string;
