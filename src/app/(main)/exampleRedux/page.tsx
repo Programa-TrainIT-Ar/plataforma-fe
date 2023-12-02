@@ -5,6 +5,7 @@ import { decrement, increment } from '../../../redux/features/exampleSlice';
 import ChangeThemeSwitch from '../../../components/ChangeThemeSwitch/ChangeThemeSwitch';
 import { setLenguage } from '../../../redux/features/lenguageSlice';
 import { LenguageAvailable } from '../../../../public/locales/interface/DictionaryLenguage';
+import ChangeLenguageSwitch from '../../../components/ChangeLenguageSwitch/ChangeLenguageSwitch';
 
 const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' };
 
@@ -13,7 +14,6 @@ export default function ExaplmeRedux() {
     const [] = useState();
     const stateSelected = useAppSelector((state) => state.reducerExample.counter); //!Select a part of global state
     const lengSelected = useAppSelector((state) => state.reducerLenguage); //!Select a part of global state
-    console.log(lengSelected);
 
     const dispatch = useAppDispatch();
 
@@ -26,7 +26,7 @@ export default function ExaplmeRedux() {
             <button onClick={() => dispatch(decrement())}>decrementar</button>
             <button onClick={() => dispatch(setLenguage(LenguageAvailable.es))}>cambiar lenguage es</button>
             <button onClick={() => dispatch(setLenguage(LenguageAvailable.en))}>cambiar lenguage en</button>
-
+            <ChangeLenguageSwitch />
             <ChangeThemeSwitch />
         </div>
     );

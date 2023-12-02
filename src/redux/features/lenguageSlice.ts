@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import dictionaries from '../../../public/locales/export';
 import { DictionaryLenguage, LenguageAvailable } from "../../../public/locales/interface/DictionaryLenguage"
+import { getLenguageFromLocalStorage } from "../../../public/locales/utils/functions";
 
 
 
@@ -8,10 +9,11 @@ interface LenguageState {
   lenguage: LenguageAvailable;
   dictionary:DictionaryLenguage
 }
-// const themeSaved = getThemeFromLocalStorage()
+const savedData = getLenguageFromLocalStorage()
+
 const initialState: LenguageState = {
-  lenguage:LenguageAvailable.en,
-  dictionary:dictionaries.english
+  lenguage: savedData?.lenguageSaved || LenguageAvailable.en,
+  dictionary:savedData?.dictionarySaved || dictionaries.english
 };
 
 export const lenguageSlice = createSlice({
