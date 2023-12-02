@@ -1,16 +1,15 @@
-
-'use client'
-import React from 'react';
-import ItemModule from '../../../components/CrearModulo/ItemModule'
-import FilterModule from '../../../components/CrearModulo/FilterModule';
+'use client';
+import styles from './styles/styles.module.scss';
+import ItemModule from './components/ItemModule';
+import FilterModule from './components/FilterModule';
 
 const CrearModules = () => {
-  return (
-    <div className='flex flex-column justify-content-center m-auto'>
-        <ItemModule/>
-        <FilterModule/>
-    </div>
-  )
-}
+    return (
+        <div className={styles.container}>
+            <ItemModule />
+            <FilterModule />
+        </div>
+    );
+};
 
-export default CrearModules
+export default CrearModules;

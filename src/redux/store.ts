@@ -4,11 +4,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 // reducers
-import colorThemeReducer from './reducer';
+import { colorThemeReducer,reducerExample } from './features/index';
 
 export const store = configureStore({
   reducer: {
     colorTheme: colorThemeReducer,
+    reducerExample:reducerExample
   },
 });
 
