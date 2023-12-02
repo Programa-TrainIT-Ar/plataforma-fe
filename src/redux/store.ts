@@ -9,7 +9,7 @@ import { colorThemeReducer,reducerExample } from './features/index';
 export const store = configureStore({
   reducer: {
     colorTheme: colorThemeReducer,
-    reducerExample:reducerExample
+    reducerExample: reducerExample
   },
 });
 
