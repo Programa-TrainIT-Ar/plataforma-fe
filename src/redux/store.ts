@@ -4,12 +4,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 // reducers
-import { colorThemeReducer,reducerExample } from './features/index';
+import { colorThemeReducer,reducerExample,reducerLenguage } from './features/index';
 
 export const store = configureStore({
   reducer: {
     colorTheme: colorThemeReducer,
-    reducerExample: reducerExample
+    reducerExample: reducerExample,
+    reducerLenguage: reducerLenguage
   },
 });
 

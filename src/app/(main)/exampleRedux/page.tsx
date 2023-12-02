@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks/hooks';
 import { decrement, increment } from '../../../redux/features/exampleSlice';
-import { setTheme } from '../../../redux/features/themeSlice';
-import { AvailableThemes } from '../../(full-content)/themeConfig/utils/enums/enumThemes';
 import ChangeThemeSwitch from '../../../components/ChangeThemeSwitch/ChangeThemeSwitch';
+import { setLenguage } from '../../../redux/features/lenguageSlice';
+import { LenguageAvailable } from '../../../../public/locales/interface/DictionaryLenguage';
 
 const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' };
 
@@ -12,14 +12,21 @@ const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyCo
 export default function ExaplmeRedux() {
     const [] = useState();
     const stateSelected = useAppSelector((state) => state.reducerExample.counter); //!Select a part of global state
+    const lengSelected = useAppSelector((state) => state.reducerLenguage); //!Select a part of global state
+    console.log(lengSelected);
+
     const dispatch = useAppDispatch();
-    console.log(stateSelected);
 
     return (
         <div style={fastStyle}>
-            <p>counter: {stateSelected}</p>
+            <p>
+                {lengSelected.dictionary.Counter}: {stateSelected}
+            </p>
             <button onClick={() => dispatch(increment())}>aumentar</button>
             <button onClick={() => dispatch(decrement())}>decrementar</button>
+            <button onClick={() => dispatch(setLenguage(LenguageAvailable.es))}>cambiar lenguage es</button>
+            <button onClick={() => dispatch(setLenguage(LenguageAvailable.en))}>cambiar lenguage en</button>
+
             <ChangeThemeSwitch />
         </div>
     );
