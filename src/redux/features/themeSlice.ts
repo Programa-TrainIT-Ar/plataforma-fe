@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AvailableThemes } from '../../app/(full-content)/themeConfig/enumThemes';
+import { AvailableThemes } from '../../app/(full-content)/themeConfig/utils/enums/enumThemes';
+import { getThemeFromLocalStorage } from '../../app/(full-content)/themeConfig/utils/functions/functions';
 
 interface ThemeState {
   theme: AvailableThemes;
 }
-
+const themeSaved = getThemeFromLocalStorage()
 const initialState: ThemeState = {
-  theme: AvailableThemes.light
+  theme:themeSaved || AvailableThemes.light
 };
 
 export const themeSlice = createSlice({
