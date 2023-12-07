@@ -5,6 +5,7 @@ import { decrement, increment } from '../../../redux/features/exampleSlice';
 import { setTheme } from '../../../redux/features/themeSlice';
 import { AvailableThemes } from '../../(full-content)/themeConfig/utils/enums/enumThemes';
 import ChangeThemeSwitch from '../../../components/ChangeThemeSwitch/ChangeThemeSwitch';
+import { InputTextarea } from 'primereact/inputtextarea';
 
 const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' };
 
@@ -21,6 +22,7 @@ export default function ExaplmeRedux() {
             <button onClick={() => dispatch(increment())}>aumentar</button>
             <button onClick={() => dispatch(decrement())}>decrementar</button>
             <ChangeThemeSwitch />
+            <InputTextarea className=" border-round-2xl" placeholder={'placeholder'} rows={5} cols={30} />
         </div>
     );
 }

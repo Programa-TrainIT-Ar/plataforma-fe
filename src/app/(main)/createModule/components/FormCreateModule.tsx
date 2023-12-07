@@ -1,8 +1,8 @@
 import DateInitial from './DateInitial';
 import SearchModule from './SearchModule';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { ButtonPrimary } from '../../../../components/ButtonPrimary/ButtonPrimary';
 import { InputPrimary } from '../../../../components/InputPrimary/InputPrimary';
+import { Button } from 'primereact/button';
 
 const FormCreateModule = () => {
     return (
@@ -17,7 +17,7 @@ const FormCreateModule = () => {
             </div>
             <div className="flex justify-content-around p-2">
                 <SearchModule />
-                <ButtonPrimary header="Crear" color="black" size="medium" icon="" onclick={() => {}} />
+                <Button label="" />
             </div>
         </form>
     );
