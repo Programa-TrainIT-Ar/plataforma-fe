@@ -14,10 +14,10 @@ const AppMenu = () => {
             label: 'Home',
             items: [
                 { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
-                { label: 'Login', icon: 'pi pi-user', to: '/login' },
-                { label: 'Crear Modulo', icon: 'pi pi-th-large', to: '/crearModulo' }
-                    ]
-        },
+                { label: 'Login', icon: 'pi pi-user', to: '/' },
+                { label: 'Create Module', icon: 'pi pi-th-large', to: '/createModule' }
+            ]
+        }
     ];
 
     return (
