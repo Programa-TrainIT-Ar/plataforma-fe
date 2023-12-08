@@ -1,10 +1,10 @@
 import reducerExample from "./exampleSlice"
 import colorThemeReducer from "./themeSlice"
-import reducerLenguage from "./lenguageSlice"
+import reducerLanguage from "./languageSlice"
 
 
 export {
   reducerExample,
   colorThemeReducer,
-  reducerLenguage
+  reducerLanguage
 }

@@ -1,14 +1,15 @@
-export interface DictionaryLenguage {
+export interface DictionaryLanguage {
     "HelloWorld":string
     "Counter":string
+    "Name":string
 }
 
-export enum LenguageAvailable {
+export enum LanguageAvailable {
     en = "en",
     es = "es"
   }
 
 export enum 
 LocalStorageCellName {
-    lenguage = "lenguage"
+    language = "language"
 }

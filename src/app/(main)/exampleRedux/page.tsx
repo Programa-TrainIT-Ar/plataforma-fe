@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks/hooks';
 import { decrement, increment } from '../../../redux/features/exampleSlice';
 import ChangeThemeSwitch from '../../../components/ChangeThemeSwitch/ChangeThemeSwitch';
-import { setLenguage } from '../../../redux/features/lenguageSlice';
-import { LenguageAvailable } from '../../../../public/locales/interface/DictionaryLenguage';
-import ChangeLenguageSwitch from '../../../components/ChangeLenguageSwitch/ChangeLenguageSwitch';
+import { setLanguage } from '../../../redux/features/languageSlice';
+import { LanguageAvailable } from '../../../../public/locales/interface/DictionaryLanguage';
+import ChangeLanguageSwitch from '../../../components/ChangeLanguageSwitch/ChangeLanguageSwitch';
 
 const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' };
 
@@ -13,8 +13,8 @@ const fastStyle = { fontSize: '30px', width: '100vw', display: 'flex', justifyCo
 export default function ExaplmeRedux() {
     const [] = useState();
     const stateSelected = useAppSelector((state) => state.reducerExample.counter); //!Select a part of global state
-    const lengSelected = useAppSelector((state) => state.reducerLenguage); //!Select a part of global state
-
+    const lengSelected = useAppSelector((state) => state.reducerLanguage); //!Select a part of global state
+    lengSelected.dictionary;
     const dispatch = useAppDispatch();
 
     return (
@@ -24,9 +24,9 @@ export default function ExaplmeRedux() {
             </p>
             <button onClick={() => dispatch(increment())}>aumentar</button>
             <button onClick={() => dispatch(decrement())}>decrementar</button>
-            <button onClick={() => dispatch(setLenguage(LenguageAvailable.es))}>cambiar lenguage es</button>
-            <button onClick={() => dispatch(setLenguage(LenguageAvailable.en))}>cambiar lenguage en</button>
-            <ChangeLenguageSwitch />
+            <button onClick={() => dispatch(setLanguage(LanguageAvailable.es))}>cambiar lenguage es</button>
+            <button onClick={() => dispatch(setLanguage(LanguageAvailable.en))}>cambiar lenguage en</button>
+            <ChangeLanguageSwitch />
             <ChangeThemeSwitch />
         </div>
     );

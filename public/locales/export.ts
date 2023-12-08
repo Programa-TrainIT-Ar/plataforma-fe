@@ -1,13 +1,13 @@
 import spanishWithoutContract from "./es/common.json"
 import englishWithoutContract from "./en/common.json"
-import { DictionaryLenguage } from "./interface/DictionaryLenguage"
+import { DictionaryLanguage } from "./interface/DictionaryLanguage"
 
-const englishContract = spanishWithoutContract as DictionaryLenguage
-const spanishContract = englishWithoutContract as DictionaryLenguage
-let lenguages = {
+const englishContract = spanishWithoutContract as DictionaryLanguage
+const spanishContract = englishWithoutContract as DictionaryLanguage
+let languages = {
   spanish:spanishContract,
   english:englishContract
 }
 
 
-export default lenguages;
+export default languages;

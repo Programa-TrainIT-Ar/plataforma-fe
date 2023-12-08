@@ -1,19 +1,19 @@
-import { LenguageAvailable, 
-LocalStorageCellName, DictionaryLenguage } from '../interface/DictionaryLenguage';
+import { LanguageAvailable, 
+LocalStorageCellName, DictionaryLanguage } from '../interface/DictionaryLanguage';
 import dictionaries from "../export"
 interface ReturnFunction {
-  lenguageSaved:LenguageAvailable
-  dictionarySaved:DictionaryLenguage
+  languageSaved:LanguageAvailable
+  dictionarySaved:DictionaryLanguage
 }
 
-export const getLenguageFromLocalStorage = ():ReturnFunction | null => {
-  const lengugeSaved = localStorage.getItem(
-LocalStorageCellName.lenguage)
+export const getLanguageFromLocalStorage = ():ReturnFunction | null => {
+  const languageSaved = localStorage.getItem(
+LocalStorageCellName.language)
   
-  if(lengugeSaved && lengugeSaved in LenguageAvailable) {
+  if(languageSaved && languageSaved in LanguageAvailable) {
     return {
-      lenguageSaved: lengugeSaved as LenguageAvailable,
-      dictionarySaved: lengugeSaved === LenguageAvailable.en ? dictionaries.english : dictionaries.spanish
+      languageSaved: languageSaved as LanguageAvailable,
+      dictionarySaved: languageSaved === LanguageAvailable.en ? dictionaries.english : dictionaries.spanish
     }
   }
   return null

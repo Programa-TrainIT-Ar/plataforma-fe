@@ -1,4 +1,5 @@
 {
   "HelloWorld":"Hola Mundo",
-  "Counter":"Contador"
+  "Counter":"Contador",
+  "Name":"Nombre"
 }
