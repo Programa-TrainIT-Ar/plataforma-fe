@@ -7,5 +7,8 @@
   "Description":"Description",
   "NameOfModule":"Name of module",
   "InitDate":"Init Date",
-  "Search":"Search"
+  "SearchModule":"Search module",
+  "PholderNameModule":"SYSTEMS",
+  "DateFormat":"Month/Day/Año",
+  "CreateModule":"Create Module"
  }

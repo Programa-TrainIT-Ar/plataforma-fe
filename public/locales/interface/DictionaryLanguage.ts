@@ -7,8 +7,13 @@ export interface DictionaryLanguage {
     "Description":string
     "NameOfModule":string
     "InitDate":string
-    "Search":string
-  
+    "SearchModule":string
+    "PholderNameModule":string
+    "DateFormat":string
+    "CreateModule":string
+
+
+
 }
 
 export enum LanguageAvailable {

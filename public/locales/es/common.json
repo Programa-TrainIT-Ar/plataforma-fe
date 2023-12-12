@@ -5,10 +5,10 @@
   "Create":"Crear",
   "ObjectiveOfTheModule":"Objetivo del modulo",
   "Description":"Descripcion",
-  "NameOfModule":"Nombr del modulo",
+  "NameOfModule":"Nombre del modulo",
   "InitDate":"Fecha de inicio",
-  "Search":"Buscar"
-
-
-
+  "SearchModule":"Buscar modulo",
+  "PholderNameModule":"SISTEMAS",
+  "DateFormat":"Mes/Dia/Año",
+  "CreateModule":"Crear Módulo"
 }
