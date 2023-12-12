@@ -1,11 +1,10 @@
 'use client';
-import styles from './styles/styles.module.scss';
 import FormCreateModule from './components/FormCreateModule';
 import DataTableModules from './components/DataTableModules';
 
 const CreateModule = () => {
     return (
-        <div className={styles.container}>
+        <div className="w-10 flex flex-column justify-content-center align-items-center my-0 mx-auto gap-5">
             <FormCreateModule />
             <DataTableModules />
         </div>
