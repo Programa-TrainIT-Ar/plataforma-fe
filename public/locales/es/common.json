@@ -1,5 +1,14 @@
 {
   "HelloWorld":"Hola Mundo",
   "Counter":"Contador",
-  "Name":"Nombre"
+  "Name":"Nombre",
+  "Create":"Crear",
+  "ObjectiveOfTheModule":"Objetivo del modulo",
+  "Description":"Descripcion",
+  "NameOfModule":"Nombr del modulo",
+  "InitDate":"Fecha de inicio",
+  "Search":"Buscar"
+
+
+
 }

@@ -1,5 +1,11 @@
  {
   "HelloWorld":"Hello World",
   "Counter":"Counter",
-  "Name":"Name"
+  "Name":"Name",
+  "Create":"Create",
+  "ObjectiveOfTheModule":"Objective of the module",
+  "Description":"Description",
+  "NameOfModule":"Name of module",
+  "InitDate":"Init Date",
+  "Search":"Search"
  }
