@@ -11,7 +11,9 @@ export interface DictionaryLanguage {
     "PholderNameModule":string
     "DateFormat":string
     "CreateModule":string
-
+    "EditModule":string
+    "Edit":string
+    "EnableDisable":string
 
 
 }

@@ -10,5 +10,10 @@
   "SearchModule":"Buscar modulo",
   "PholderNameModule":"SISTEMAS",
   "DateFormat":"Mes/Dia/Año",
-  "CreateModule":"Crear Módulo"
+  "CreateModule":"Crear Módulo",
+  "EditModule":"Editar Módulo",
+  "Edit":"Editar",
+  "EnableDisable":"Activar/Desactivar"
+
+
 }

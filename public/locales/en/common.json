@@ -10,5 +10,9 @@
   "SearchModule":"Search module",
   "PholderNameModule":"SYSTEMS",
   "DateFormat":"Month/Day/Año",
-  "CreateModule":"Create Module"
+  "CreateModule":"Create Module",
+  "EditModule":"Edit Module",
+  "Edit":"Edit",
+  "EnableDisable":"Enable/Disable"
+
  }
