@@ -228,12 +228,12 @@
 	--bluegray-100: #d9e0e3;
 	--bluegray-200: #bbc7cd;
 	--bluegray-300: #9caeb7;
-	--bluegray-400: #7e96a1;
-	--bluegray-500: #607d8b;
-	--bluegray-600: #526a76;
-	--bluegray-700: #435861;
-	--bluegray-800: #35454c;
-	--bluegray-900: #263238;
+	--bluegray-400: rgb(184, 184, 184);
+	--bluegray-500: #572EFF;
+	--bluegray-600: #FF5EA6;
+	--bluegray-700: #6A5FFF;
+	--bluegray-800: #d7dbdc;
+	--bluegray-900: #ffffff;
 	--purple-50: #faf4fb;
 	--purple-100: #e7cbec;
 	--purple-200: #d4a2dd;
