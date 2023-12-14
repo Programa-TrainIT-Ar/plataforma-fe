@@ -1,13 +1,12 @@
-'use client'
-import {usePathname, useSearchParams} from 'next/navigation';
+'use client';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import {Ripple} from 'primereact/ripple';
-import {classNames} from 'primereact/utils';
-import React, {useContext, useEffect} from 'react';
-import {CSSTransition} from 'react-transition-group';
-import {MenuContext} from './context/menucontext';
-import {AppMenuItemProps} from '../types/types';
-
+import { Ripple } from 'primereact/ripple';
+import { classNames } from 'primereact/utils';
+import React, { useContext, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { MenuContext } from './context/menucontext';
+import { AppMenuItemProps } from '../types/types';
 
 const AppMenuitem = (props: AppMenuItemProps) => {
     const pathname = usePathname();
@@ -23,10 +22,9 @@ const AppMenuitem = (props: AppMenuItemProps) => {
         }
     };
 
-
     useEffect(() => {
         onRouteChange(pathname);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname, searchParams]);
 
     const itemClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -55,7 +53,7 @@ const AppMenuitem = (props: AppMenuItemProps) => {
             </ul>
         </CSSTransition>
     );
-    const classes = `border-3  mb-3 w-full bg-gray-900 p-3 ${isActiveRoute ? " border-200":"border-transparent"}`
+    const classes = `border-3  mb-3 w-full bg-bluegray-800 p-2 ${isActiveRoute ? ' border-200' : 'border-transparent'}`;
     return (
         <li className={classNames({ 'layout-root-menuitem': props.root, 'active-menuitem': active })}>
             {props.root && item!.visible !== false && <div className="layout-menuitem-root-text">{item!.label}</div>}
