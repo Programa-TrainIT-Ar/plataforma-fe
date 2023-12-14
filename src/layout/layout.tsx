@@ -148,7 +148,7 @@ const Layout = ({ children }: ChildContainerProps) => {
     <React.Fragment>
       <div className={containerClass}>
         <AppTopbar ref={topbarRef} />
-        <div ref={sidebarRef} className="layout-sidebar">
+        <div ref={sidebarRef} className="layout-sidebar h-auto shadow-8 ml-8">
           <AppSidebar />
         </div>
         <div className="layout-main-container">
