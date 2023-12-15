@@ -8,8 +8,8 @@ import '../styles/layout/layout.scss';
 import '../styles/demo/Demos.scss';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
-import { ThemeConfig } from './(full-content)/themeConfig/themeConfig';
 import Head from 'next/head';
+import { ThemeConfig } from '../components/themeConfig/themeConfig';
 interface RootLayoutProps {
     children: React.ReactNode;
 }

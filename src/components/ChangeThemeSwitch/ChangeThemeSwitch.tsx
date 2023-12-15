@@ -2,7 +2,7 @@ import { InputSwitch } from 'primereact/inputswitch';
 import { useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { setTheme } from '../../redux/features/themeSlice';
-import { AvailableThemes, CellNameLS } from '../../app/(full-content)/themeConfig/utils/enums/enumThemes';
+import { AvailableThemes, CellNameLS } from '../themeConfig/utils/enums/enumThemes';
 
 export default function ChangeThemeSwitch() {
     const [switchs, setSwitchs] = useState(initState());

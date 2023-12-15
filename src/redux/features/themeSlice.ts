@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AvailableThemes } from '../../app/(full-content)/themeConfig/utils/enums/enumThemes';
-import { getThemeFromLocalStorage } from '../../app/(full-content)/themeConfig/utils/functions/functions';
+import { AvailableThemes } from '../../components/themeConfig/utils/enums/enumThemes';
+import { getThemeFromLocalStorage } from '../../components/themeConfig/utils/functions/functions';
 
 interface ThemeState {
   theme: AvailableThemes;
