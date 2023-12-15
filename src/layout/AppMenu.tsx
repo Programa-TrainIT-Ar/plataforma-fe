@@ -11,7 +11,7 @@ const AppMenu = () => {
 
     const model: AppMenuItem[] = [
         {
-            label: 'Home',
+            label: '',
             items: [
                 { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
                 { label: 'Login', icon: 'pi pi-user', to: '/' },
@@ -22,13 +22,16 @@ const AppMenu = () => {
     ];
 
     return (
-        <MenuProvider>
-            <ul className="layout-menu">
-                {model.map((item, i) => {
-                    return !item?.seperator ? <AppMenuitem item={item} root={true} index={i} key={item.label} /> : <li className="menu-separator"></li>;
-                })}
-            </ul>
-        </MenuProvider>
+        <div className='flex flex-column py-6 h-auto'>
+            <p className='text-xl mb-3 mx-auto'>Home</p>
+            <MenuProvider>
+                <ul className="layout-menu">
+                    {model.map((item, i) => {
+                        return !item?.seperator ? <AppMenuitem item={item}  root={true} index={i} key={item.label} /> : <li className="menu-separator"></li>;
+                    })}
+                </ul>
+            </MenuProvider>
+        </div>
     );
 };
 
