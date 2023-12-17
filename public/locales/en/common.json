@@ -1,5 +1,18 @@
  {
   "HelloWorld":"Hello World",
   "Counter":"Counter",
-  "Name":"Name"
+  "Name":"Name",
+  "Create":"Create",
+  "ObjectiveOfTheModule":"Objective of the module",
+  "Description":"Description",
+  "NameOfModule":"Name of module",
+  "InitDate":"Init Date",
+  "SearchModule":"Search module",
+  "PholderNameModule":"SYSTEMS",
+  "DateFormat":"Month/Day/Año",
+  "CreateModule":"Create Module",
+  "EditModule":"Edit Module",
+  "Edit":"Edit",
+  "EnableDisable":"Enable/Disable"
+
  }

@@ -2,6 +2,20 @@ export interface DictionaryLanguage {
     "HelloWorld":string
     "Counter":string
     "Name":string
+    "Create":string
+    "ObjectiveOfTheModule":string
+    "Description":string
+    "NameOfModule":string
+    "InitDate":string
+    "SearchModule":string
+    "PholderNameModule":string
+    "DateFormat":string
+    "CreateModule":string
+    "EditModule":string
+    "Edit":string
+    "EnableDisable":string
+
+
 }
 
 export enum LanguageAvailable {

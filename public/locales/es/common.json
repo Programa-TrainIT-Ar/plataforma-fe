@@ -1,5 +1,19 @@
 {
   "HelloWorld":"Hola Mundo",
   "Counter":"Contador",
-  "Name":"Nombre"
+  "Name":"Nombre",
+  "Create":"Crear",
+  "ObjectiveOfTheModule":"Objetivo del modulo",
+  "Description":"Descripcion",
+  "NameOfModule":"Nombre del modulo",
+  "InitDate":"Fecha de inicio",
+  "SearchModule":"Buscar modulo",
+  "PholderNameModule":"SISTEMAS",
+  "DateFormat":"Mes/Dia/Año",
+  "CreateModule":"Crear Módulo",
+  "EditModule":"Editar Módulo",
+  "Edit":"Editar",
+  "EnableDisable":"Activar/Desactivar"
+
+
 }

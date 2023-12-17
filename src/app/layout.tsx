@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Provider store={store}>
             <html lang="en" suppressHydrationWarning>
                 <ThemeConfig />
-                <body>
+                <body className="bg-bluegray-800">
                     <LayoutProvider>{children}</LayoutProvider>
                 </body>
             </html>
