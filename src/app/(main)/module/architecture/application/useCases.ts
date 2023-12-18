@@ -1,3 +1,4 @@
+import { ResponseRequest } from '../../../../../utils/resonseRequestObj';
 import { ModuleEntity } from '../domain/entity';
 import { RepositoryModuleImpl } from '../infrastructure/repositoryImpl';
 
@@ -8,7 +9,7 @@ export class UseCasesModule {
     this.repository = repositoryImpl;
   }
 
-  async createModule(moduleData: ModuleEntity): Promise<string> {
+  async createModule(moduleData: ModuleEntity): Promise<ResponseRequest> {
     const messageResponse = await this.repository.create(moduleData)
     return messageResponse;
   }
