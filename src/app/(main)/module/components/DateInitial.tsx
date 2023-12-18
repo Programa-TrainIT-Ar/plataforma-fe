@@ -8,7 +8,7 @@ export default function DateInitial() {
     return (
         <div className="w-full gap-2 flex flex-column justify-content-center align-content-center">
             <label className="text-600 text-sm">{dictionary.InitDate}</label>
-            <Calendar name="date" placeholder={dictionary.DateFormat} showIcon className="border-round-xl border-none bg-bluegray-900" />
+            <Calendar required name="date" placeholder={dictionary.DateFormat} showIcon className="border-round-xl border-none bg-bluegray-900" />
         </div>
     );
 }

@@ -41,7 +41,7 @@ const CreateModule = () => {
                 </div>
                 <div className="flex w-full flex-column gap-2 ">
                     <label className="text-600 text-sm">{dictionary.Description}</label>
-                    <InputTextarea name="description" placeholder={dictionary.ObjectiveOfTheModule} rows={5} cols={30} className="max-w-full border-round-xl border-none bg-bluegray-900" />
+                    <InputTextarea required name="description" placeholder={dictionary.ObjectiveOfTheModule} rows={5} cols={30} className="max-w-full border-round-xl border-none bg-bluegray-900" />
                 </div>
                 <div className="flex justify-content-between align-items-center">
                     <SearchModule />
