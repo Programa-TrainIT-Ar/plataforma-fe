@@ -3,4 +3,6 @@ export interface ModuleEntity {
   name: string;
   description: string;
   moduleStartDate: string;
+  created?: string,
+  status?: string
 }
