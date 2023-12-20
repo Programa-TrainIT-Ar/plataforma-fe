@@ -12,7 +12,7 @@ export const InputPrimary = ({ title, placeHolder }: Props) => {
     return (
         <div className="w-full flex flex-column gap-2">
             <label className="text-600 text-sm">{title}</label>
-            <InputText type="text" placeholder={placeHolder} className={`border-round-xl border-none bg-bluegray-900`} />
+            <InputText required name="name" type="text" placeholder={placeHolder} className={`border-round-xl border-none bg-bluegray-900`} />
         </div>
     );
 };
