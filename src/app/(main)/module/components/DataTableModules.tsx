@@ -15,11 +15,11 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
                 return {
                     ...module,
                     options: (
-                        <>
-                            <Button type="button" icon="pi pi-eye" iconPos="right" className="border-round-xl p-2" severity="info" />
-                            <Button type="button" icon="pi pi-pencil" iconPos="right" className="ml-2 border-round-xl p-2" severity="success" />
-                            <Button type="button" icon="pi pi-trash" iconPos="right" className="ml-2 border-round-xl p-2" severity="danger" onClick={() => confirm('Seguro/a quiere eliminar el módulo?')} />
-                        </>
+                        <div className="flex justify-content-center gap-1 ">
+                            <Button type="button" icon="pi pi-eye" className="" style={{ backgroundColor: '#00000000' }} />
+                            <Button type="button" icon="pi pi-pencil" className="" style={{ backgroundColor: '#00000000' }} />
+                            <Button type="button" icon="pi pi-trash" className="" onClick={() => confirm('Seguro/a quiere eliminar el módulo?')} style={{ backgroundColor: '#00000000' }} />
+                        </div>
                     )
                 };
             })) ||
@@ -33,8 +33,8 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
     };
 
     return (
-        <div className="">
-            <DataTable value={dataForRender} selectionMode="single" onRowSelect={onRowSelect} tableStyle={{ minWidth: '50rem' }} className="bg-white">
+        <div className="w-8">
+            <DataTable value={dataForRender} selectionMode="single" onRowSelect={onRowSelect} tableStyle={{ width: '100%', backgroundColor: 'bg-bluegray-900' }}>
                 <Column field="options" header="Actions" align="center" />
                 <Column field="id" header="Id" hidden align="center" />
                 <Column field="name" header="Módule" align="center" />
