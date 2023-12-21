@@ -14,7 +14,12 @@ export class UseCasesModule {
     return messageResponse;
   }
 
-  async searchModules (moduleName:string): Promise<ResponseRequest<ModuleEntity[]>> {
+  async editModule(moduleData: ModuleEntity): Promise<ResponseRequest> {
+    const messageResponse = await this.repository.edit(moduleData)
+    return messageResponse;
+  }
+
+  async searchModules(moduleName: string): Promise<ResponseRequest<ModuleEntity[]>> {
     const messageResponse = await this.repository.search(moduleName)
     return messageResponse;
   }
