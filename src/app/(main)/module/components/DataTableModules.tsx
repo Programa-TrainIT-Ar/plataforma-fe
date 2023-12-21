@@ -1,6 +1,8 @@
 import { DataTable, DataTableSelectEvent } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+import { ConfirmDialog } from 'primereact/confirmdialog'; // For <ConfirmDialog /> component
+import { confirmDialog } from 'primereact/confirmdialog'; // For confirmDialog method
 import { ModuleEntity } from '../architecture/domain/entity';
 
 interface Props {
@@ -9,7 +11,28 @@ interface Props {
 }
 
 export default function DataTableModules({ moduleList, getIdModuleSelected }: Props) {
-    const dataForRender =
+      
+      const confirm = (event: any) => {
+        confirmDialog({
+            trigger: event.currentTarget,
+            message: 'Are you sure you want to proceed?',
+            header: 'Confirmation',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => acceptFunc(),
+            reject: () => rejectFunc()
+        });
+    };
+
+    const acceptFunc = () => {
+        // se hace el borrado del módulo
+    }
+
+    const rejectFunc = () => {
+        return;
+    }
+      
+      
+      const dataForRender =
         (moduleList &&
             moduleList.map((module) => {
                 return {
@@ -25,13 +48,12 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
             })) ||
         [];
 
-    const onRowSelect = (event: DataTableSelectEvent) => {
+     const onRowSelect = (event: DataTableSelectEvent) => {
         const condition = event.data['id'];
         if (typeof condition === 'string' && getIdModuleSelected) {
             getIdModuleSelected(condition);
         }
     };
-
     return (
         <div className="w-8">
             <DataTable value={dataForRender} selectionMode="single" onRowSelect={onRowSelect} tableStyle={{ width: '100%', backgroundColor: 'bg-bluegray-900' }}>
@@ -42,6 +64,9 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
                 <Column field="moduleStartDate" header="Init Date" align="center" />
                 <Column field="status" header="Status" align="center" />
             </DataTable>
+            
+            <Button type="button" icon="pi pi-trash" iconPos="right" className="ml-2 border-round-xl p-2" severity="danger" onClick={confirm} />
+            <ConfirmDialog />
         </div>
     );
 }
