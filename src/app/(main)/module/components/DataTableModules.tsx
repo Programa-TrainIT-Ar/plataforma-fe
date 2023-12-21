@@ -34,7 +34,7 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
 
     return (
         <div className="w-8">
-            <DataTable value={dataForRender} selectionMode="single" onRowSelect={onRowSelect} tableStyle={{ width: '100%', backgroundColor: 'bg-bluegray-900' }}>
+            <DataTable value={dataForRender} selectionMode="single" onRowSelect={onRowSelect} tableStyle={{ width: '100%', backgroundColor: 'gray' }}>
                 <Column field="options" header="Actions" align="center" />
                 <Column field="id" header="Id" hidden align="center" />
                 <Column field="name" header="Módule" align="center" />
