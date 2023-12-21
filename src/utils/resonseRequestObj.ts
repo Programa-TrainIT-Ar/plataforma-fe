@@ -1,6 +1,6 @@
-export interface ResponseRequest {
+export interface ResponseRequest<T = any> {
   succes:boolean
   err:boolean
   message:string
-  data:any
+  data:T
 }
