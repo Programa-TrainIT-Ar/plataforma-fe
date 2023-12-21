@@ -36,8 +36,8 @@ const CreateModule = () => {
                 {err.status ? <p>{err.msg}</p> : <></>}
                 <h4>{dictionary.CreateModule}</h4>
                 <div className="w-full gap-3 flex flex-row gap  justify-start justify-items-center">
-                    <InputPrimary size="large" title={dictionary.NameOfModule} placeHolder={dictionary.PholderNameModule} />
-                    <DateInitial />
+                    <InputPrimary required title={dictionary.NameOfModule} placeHolder={dictionary.PholderNameModule} />
+                    <DateInitial required />
                 </div>
                 <div className="flex w-full flex-column gap-2 ">
                     <label className="text-600 text-sm">{dictionary.Description}</label>
