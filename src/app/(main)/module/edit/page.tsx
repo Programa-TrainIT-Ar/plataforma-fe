@@ -8,32 +8,48 @@ import { Button } from 'primereact/button';
 import DataTableModules from '../components/DataTableModules';
 import { InputSwitch } from 'primereact/inputswitch';
 import SwitchOnOff from '../../../../components/SwitchOnOff/SwitchOnOff';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState,useRef } from 'react';
 import { ModuleEntity } from '../architecture/domain/entity';
 import { useCasesHook } from '../architecture/interactionHook/useCasesHook';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
 export default function EditModule() {
     const cases = useCasesHook();
     const dictionary = useAppSelector((state) => state.reducerLanguage).dictionary;
     const [modulesSearched, setModulesSearched] = useState<ModuleEntity[]>();
     const [moduleIdSelected, setModuleIdSelected] = useState<string>();
-    console.log(moduleIdSelected);
-
+    const savedDataForEdit = useRef<ModuleEntity>();
     const [err, setErr] = useState({
         status: false,
         msg: ''
     });
-    const editModuleHandler = async (evt: FormEvent<HTMLFormElement>) => {
-        evt.preventDefault();
-        const dataFromForm = Object.fromEntries(new FormData(evt.target as HTMLFormElement));
-        const bodyData: ModuleEntity = { id: moduleIdSelected, name: String(dataFromForm['name']), description: String(dataFromForm['name']), moduleStartDate: String(dataFromForm['date']) };
-        await cases.editModule(bodyData).catch((err: Error) => {
+    
+    const confirm = (event: any) => {
+        confirmDialog({
+            message: 'Are you sure you want to proceed?',
+            header: 'Confirmation',
+            icon: 'pi pi-exclamation-triangle',
+            accept: acceptFunc,
+            reject: () => {}
+        });
+      };
+
+    const acceptFunc = async () => {        
+        if(!savedDataForEdit.current) return alert("Por favor seleccione un modulo");
+        await cases.editModule(savedDataForEdit.current).catch((err: Error) => {
             setErr({
                 status: true,
                 msg: err.message
             });
         });
+    }
+    const editModuleHandler = async (evt: FormEvent<HTMLFormElement>) => {
+        evt.preventDefault();
+        const dataFromForm = Object.fromEntries(new FormData(evt.target as HTMLFormElement));
+        const bodyData: ModuleEntity = { id: moduleIdSelected, name: String(dataFromForm['name']), description: String(dataFromForm['name']), moduleStartDate: String(dataFromForm['date']) };
+        savedDataForEdit.current = bodyData
     };
+
     return (
         <div className="w-10 flex flex-column justify-content-center align-items-center my-0 mx-auto gap-5">
             <form className="mt-6 flex flex-column w-8 gap-3" onSubmit={editModuleHandler}>
@@ -51,10 +67,12 @@ export default function EditModule() {
                 </div>
                 <div className="flex justify-content-between align-items-center">
                     <SearchModule getModulesSearched={setModulesSearched} />
-                    <Button type="submit" label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" className="h-full w-2 ml-6 border-round-xl p-3" />
+                    <Button type="submit" onClick={confirm} label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" className="h-full w-2 ml-6 border-round-xl p-3" />
                 </div>
             </form>
             <DataTableModules moduleList={modulesSearched} getIdModuleSelected={setModuleIdSelected} />
+            <ConfirmDialog/>
+        
         </div>
     );
 }

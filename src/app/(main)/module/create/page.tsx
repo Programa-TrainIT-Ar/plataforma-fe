@@ -6,9 +6,10 @@ import DateInitial from '../components/DateInitial';
 import { InputTextarea } from 'primereact/inputtextarea';
 import SearchModule from '../components/SearchModule';
 import { Button } from 'primereact/button';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useRef } from 'react';
 import { useCasesHook } from '../architecture/interactionHook/useCasesHook';
 import { ModuleEntity } from '../architecture/domain/entity';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
 const CreateModule = () => {
     const cases = useCasesHook();
@@ -18,16 +19,36 @@ const CreateModule = () => {
     });
     const dictionary = useAppSelector((state) => state.reducerLanguage).dictionary;
     const [modulesSearched, setModulesSearched] = useState<ModuleEntity[]>();
-    const createModuleHandler = async (evt: FormEvent<HTMLFormElement>) => {
-        evt.preventDefault();
-        const dataFromForm = Object.fromEntries(new FormData(evt.target as HTMLFormElement));
-        const bodyData: ModuleEntity = { name: String(dataFromForm['name']), description: String(dataFromForm['name']), moduleStartDate: String(dataFromForm['date']) };
-        await cases.createModule(bodyData).catch((err: Error) => {
+    const savedDataForCreate = useRef<ModuleEntity>();
+
+
+    
+    const confirm = (event: any) => {
+        confirmDialog({
+            message: 'Are you sure you want to proceed?',
+            header: 'Confirmation',
+            icon: 'pi pi-exclamation-triangle',
+            accept: acceptFunc,
+            reject: () => {}
+        });
+      };
+
+    const acceptFunc = async () => {        
+        if(!savedDataForCreate.current) return alert("Por favor seleccione un modulo");
+        await cases.createModule(savedDataForCreate.current).catch((err: Error) => {
             setErr({
                 status: true,
                 msg: err.message
             });
         });
+    }
+
+
+    const createModuleHandler = async (evt: FormEvent<HTMLFormElement>) => {
+        evt.preventDefault();
+        const dataFromForm = Object.fromEntries(new FormData(evt.target as HTMLFormElement));
+        const bodyData: ModuleEntity = { name: String(dataFromForm['name']), description: String(dataFromForm['name']), moduleStartDate: String(dataFromForm['date']) };
+        savedDataForCreate.current = bodyData
     };
 
     return (
@@ -45,10 +66,12 @@ const CreateModule = () => {
                 </div>
                 <div className="flex justify-content-between align-items-center">
                     <SearchModule getModulesSearched={setModulesSearched} />
-                    <Button type="submit" label={dictionary.Create} icon="pi pi-plus" iconPos="right" className="h-full w-2 ml-6 border-round-xl p-3" />
+                    <Button type="submit" onClick={confirm} label={dictionary.Create} icon="pi pi-plus" iconPos="right" className="h-full w-2 ml-6 border-round-xl p-3" />
                 </div>
             </form>
             <DataTableModules moduleList={modulesSearched} />
+            <ConfirmDialog/>
+
         </div>
     );
 };
