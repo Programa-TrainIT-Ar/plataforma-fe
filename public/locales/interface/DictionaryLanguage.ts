@@ -14,6 +14,8 @@ export interface DictionaryLanguage {
     "EditModule":string
     "Edit":string
     "EnableDisable":string
+    "DeleteModule":string
+    "Delete":string
 
 
 }
