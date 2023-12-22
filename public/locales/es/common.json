@@ -13,7 +13,9 @@
   "CreateModule":"Crear Módulo",
   "EditModule":"Editar Módulo",
   "Edit":"Editar",
-  "EnableDisable":"Activar/Desactivar"
+  "EnableDisable":"Activar/Desactivar",
+  "DeleteModule":"Eliminar Modulo",
+  "Delete": "Eliminar"
 
 
 }

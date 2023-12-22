@@ -13,6 +13,8 @@
   "CreateModule":"Create Module",
   "EditModule":"Edit Module",
   "Edit":"Edit",
-  "EnableDisable":"Enable/Disable"
+  "EnableDisable":"Enable/Disable",
+  "DeleteModule": "Delete module",
+  "Delete": "Delete"
 
  }
