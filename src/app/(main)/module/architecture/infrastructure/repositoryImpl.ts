@@ -73,4 +73,28 @@ export class RepositoryModuleImpl implements BaseRepositoryModule {
       throw new Error(err.message)
     }
   }
+
+  
+  async delete(moduleId: string): Promise<ResponseRequest> {
+    try {
+      const res = await (await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/modules?id=${moduleId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })).json()
+      console.log(res);
+      
+      const data: ResponseRequest = {
+        succes: true,
+        err: false,
+        message: res,
+        data: null
+      }
+      return data;
+    } catch (error) {
+      let err = error as Error
+      throw new Error(err.message)
+    }
+  }
 }
