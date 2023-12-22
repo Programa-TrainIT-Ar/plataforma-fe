@@ -63,9 +63,7 @@ export default function DataTableModules({ moduleList, getIdModuleSelected }: Pr
                 <Column field="created" header="Created" align="center" />
                 <Column field="moduleStartDate" header="Init Date" align="center" />
                 <Column field="status" header="Status" align="center" />
-            </DataTable>
-            
-            <Button type="button" icon="pi pi-trash" iconPos="right" className="ml-2 border-round-xl p-2" severity="danger" onClick={confirm} />
+            </DataTable>            
             <ConfirmDialog />
         </div>
     );
