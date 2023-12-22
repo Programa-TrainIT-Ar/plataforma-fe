@@ -6,17 +6,48 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import SearchModule from '../components/SearchModule';
 import { Button } from 'primereact/button';
 import DataTableModules from '../components/DataTableModules';
-import { InputSwitch } from 'primereact/inputswitch';
-import SwitchOnOff from '../../../../components/SwitchOnOff/SwitchOnOff';
-import { FormEvent, useState } from 'react';
+import React,{ FormEvent, useState } from 'react';
 import { ModuleEntity } from '../architecture/domain/entity';
 import { useCasesHook } from '../architecture/interactionHook/useCasesHook';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog'; 
+
 
 export default function EditModule() {
     const cases = useCasesHook();
+    
     const dictionary = useAppSelector((state) => state.reducerLanguage).dictionary;
     const [modulesSearched, setModulesSearched] = useState<ModuleEntity[]>();
     const [moduleIdSelected, setModuleIdSelected] = useState<string>();
+    
+    const [err, setErr] = useState({
+        status: false,
+        msg: ''
+    });
+
+
+    const confirm = (event: any) => {
+        confirmDialog({
+            message: 'Are you sure you want to proceed?',
+            header: 'Confirmation',
+            icon: 'pi pi-exclamation-triangle',
+            accept: acceptFunc,
+            reject: () => {}
+        });
+      };
+
+    const acceptFunc = async () => {        
+        if(!moduleIdSelected) return alert("Por favor seleccione un modulo");
+        await cases.deleteModule(moduleIdSelected).catch((err:Error) => setErr({
+            status:true,
+            msg:err.message
+        }));
+    }
+
+    const dispatchDialog = async (evt:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        evt.preventDefault();
+        confirm("")
+    }
+
     
     return (
         <div className="w-10 flex flex-column justify-content-center align-items-center my-0 mx-auto gap-5">
@@ -34,12 +65,12 @@ export default function EditModule() {
                 </div>
                 <div className="flex justify-content-between align-items-center">
                     <SearchModule getModulesSearched={setModulesSearched} />
-                    <Button type="submit" label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" style={{backgroundColor:"#00000000"}} className="h-full w-2 ml-6 border-solid border-primary border-round-xl border-3   p-3" />
-                    <Button type="submit" label={dictionary.Delete} icon="pi pi-trash" iconPos="right" className="h-full w-3 ml-4 border-round-xl p-3 border-solid border-primary border-round-xl border-3" />
+                    <Button label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" style={{backgroundColor:"#00000000"}} className="h-full w-2 ml-6 border-solid border-primary border-round-xl border-3   p-3" />
+                    <Button onClick={dispatchDialog} label={dictionary.Delete} icon="pi pi-trash" iconPos="right" className="h-full w-3 ml-4 border-round-xl p-3 border-solid border-primary border-round-xl border-3" />
                 </div>
             </form>
             <DataTableModules moduleList={modulesSearched} getIdModuleSelected={setModuleIdSelected} />
+            <ConfirmDialog/>
         </div>
     );
 }
-//!   /module/edit

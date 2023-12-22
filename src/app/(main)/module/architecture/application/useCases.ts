@@ -23,4 +23,11 @@ export class UseCasesModule {
     const messageResponse = await this.repository.search(moduleName)
     return messageResponse;
   }
+  async deleteModule(moduleId: string): Promise<ResponseRequest<ModuleEntity[]>> {
+    const messageResponse = await this.repository.delete(moduleId)
+    return messageResponse;
+  }
+
+
+
 }
