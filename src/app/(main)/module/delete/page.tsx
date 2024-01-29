@@ -3,27 +3,25 @@ import { useAppSelector } from '../../../../redux/hooks/hooks';
 import { InputPrimary } from '../../../../components/InputPrimary/InputPrimary';
 import DateInitial from '../components/DateInitial';
 import { InputTextarea } from 'primereact/inputtextarea';
-import SearchModule from '../components/SearchModule';
+import SearchModule from '../../../../components/Search/Search';
 import { Button } from 'primereact/button';
 import DataTableModules from '../components/DataTableModules';
-import React,{ FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { ModuleEntity } from '../architecture/domain/entity';
 import { useCasesHook } from '../architecture/interactionHook/useCasesHook';
-import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog'; 
-
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
 export default function EditModule() {
     const cases = useCasesHook();
-    
+
     const dictionary = useAppSelector((state) => state.reducerLanguage).dictionary;
     const [modulesSearched, setModulesSearched] = useState<ModuleEntity[]>();
     const [moduleIdSelected, setModuleIdSelected] = useState<string>();
-    
+
     const [err, setErr] = useState({
         status: false,
         msg: ''
     });
-
 
     const confirm = (event: any) => {
         confirmDialog({
@@ -33,22 +31,34 @@ export default function EditModule() {
             accept: acceptFunc,
             reject: () => {}
         });
-      };
+    };
 
-    const acceptFunc = async () => {        
-        if(!moduleIdSelected) return alert("Por favor seleccione un modulo");
-        await cases.deleteModule(moduleIdSelected).catch((err:Error) => setErr({
-            status:true,
-            msg:err.message
-        }));
-    }
+    const acceptFunc = async () => {
+        if (!moduleIdSelected) return alert('Por favor seleccione un modulo');
+        await cases.deleteModule(moduleIdSelected).catch((err: Error) =>
+            setErr({
+                status: true,
+                msg: err.message
+            })
+        );
+    };
 
-    const dispatchDialog = async (evt:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const dispatchDialog = async (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         evt.preventDefault();
-        confirm("")
-    }
+        confirm('');
+    };
 
-    
+    const handlerModuleSearch = async ({ value }: { value: string }) => {
+        if (!value) return;
+        const response = await cases.searchModules(value).catch((err: Error) =>
+            setErr({
+                msg: err.message,
+                status: true
+            })
+        );
+        if (response && setModulesSearched) setModulesSearched(response.data);
+    };
+
     return (
         <div className="w-10 flex flex-column justify-content-center align-items-center my-0 mx-auto gap-5">
             <form className="mt-6 flex flex-column w-8 gap-3">
@@ -64,13 +74,13 @@ export default function EditModule() {
                     <InputTextarea required={false} placeholder={dictionary.ObjectiveOfTheModule} rows={5} cols={30} className="max-w-full border-round-xl border-none bg-bluegray-900" />
                 </div>
                 <div className="flex justify-content-between align-items-center">
-                    <SearchModule getModulesSearched={setModulesSearched} />
-                    <Button label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" style={{backgroundColor:"#00000000"}} className="h-full w-2 ml-6 border-solid border-primary border-round-xl border-3   p-3" />
+                    <SearchModule onSearch={handlerModuleSearch} />
+                    <Button label={dictionary.Edit} icon="pi pi-pencil" iconPos="right" style={{ backgroundColor: '#00000000' }} className="h-full w-2 ml-6 border-solid border-primary border-round-xl border-3   p-3" />
                     <Button onClick={dispatchDialog} label={dictionary.Delete} icon="pi pi-trash" iconPos="right" className="h-full w-3 ml-4 border-round-xl p-3 border-solid border-primary border-round-xl border-3" />
                 </div>
             </form>
             <DataTableModules moduleList={modulesSearched} getIdModuleSelected={setModuleIdSelected} />
-            <ConfirmDialog/>
+            <ConfirmDialog />
         </div>
     );
 }
