@@ -74,8 +74,10 @@ export class RepositoryModuleImpl implements BaseRepositoryModule {
     }
   }
 
-  
+
   async delete(moduleId: string): Promise<ResponseRequest> {
+    console.log(moduleId, "<<<<----------");
+
     try {
       const res = await (await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/modules?id=${moduleId}`, {
         method: "DELETE",
@@ -84,7 +86,7 @@ export class RepositoryModuleImpl implements BaseRepositoryModule {
         },
       })).json()
       console.log(res);
-      
+
       const data: ResponseRequest = {
         succes: true,
         err: false,
