@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
+import { RootState } from '../../redux/store';
 
 export const ThemeConfig = () => {
     const theme = useSelector((state: RootState) => state.colorTheme.theme);
