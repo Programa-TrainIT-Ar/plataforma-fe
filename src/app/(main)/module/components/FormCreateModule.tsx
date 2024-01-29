@@ -1,17 +1,18 @@
 import DateInitial from './DateInitial';
-import SearchModule from './SearchModule';
+import SearchModule from '../../../../components/Search/Search';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { InputPrimary } from '../../../../components/InputPrimary/InputPrimary';
 import { Button } from 'primereact/button';
 import { useAppSelector } from '../../../../redux/hooks/hooks';
 
+//! LEONEL this is an innecesary component, i need to ask you if you want make this reusable, because this is used on the three module pages.
 const FormCreateModule = () => {
     const dictionary = useAppSelector((state) => state.reducerLanguage).dictionary;
     return (
         <form className="mt-6 flex flex-column w-8 gap-3">
             <h4>{dictionary.CreateModule}</h4>
             <div className="w-full gap-3 flex flex-row gap  justify-start justify-items-center">
-                <InputPrimary size="large" title={dictionary.NameOfModule} placeHolder={dictionary.PholderNameModule} />
+                <InputPrimary title={dictionary.NameOfModule} placeHolder={dictionary.PholderNameModule} />
                 <DateInitial />
             </div>
             <div className="flex w-full flex-column gap-2 ">
