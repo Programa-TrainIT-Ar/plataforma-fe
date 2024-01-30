@@ -1,9 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from '../redux/reducer';
-import { RootState } from '../redux/store';
 import Link from 'next/link';
-import { classNames } from 'primereact/utils';
 import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
 import { AppTopBarRef } from '../types/types';
 import { LayoutContext } from './context/layoutcontext';
