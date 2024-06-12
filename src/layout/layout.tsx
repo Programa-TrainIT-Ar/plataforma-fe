@@ -3,7 +3,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEventListener, useUnmountEffect } from 'primereact/hooks';
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { classNames } from 'primereact/utils';
 import AppFooter from './AppFooter';
 import AppSidebar from './AppSidebar';
@@ -11,6 +11,8 @@ import AppTopbar from './AppTopbar';
 import { LayoutContext } from './context/layoutcontext';
 import { AppTopbarRef, ChildContainerProps, LayoutState } from '@/types';
 import { PrimeReactContext } from 'primereact/api';
+import Modules from "../modules/Modules";
+
 
 const Layout = ({ children }: ChildContainerProps) => {
     const { layoutConfig, layoutState, setLayoutState } = useContext(LayoutContext);
@@ -104,19 +106,35 @@ const Layout = ({ children }: ChildContainerProps) => {
         'p-ripple-disabled': !layoutConfig.ripple
     });
 
-    return (<React.Fragment>
+
+ // Estado para mostrar los módulos
+ const [showModules, setShowModules] = useState(false);
+
+ // Array de módulos hasta que este mock 
+ const modulos = [
+     { id: 'a', name: 'Sistemas',},
+     { id: 'b', name: 'Marketing',},
+     { id: 'c', name: 'Educación'}
+ ];
+
+
+    return (
+<React.Fragment>
             <div className={containerClass}>
                 <AppTopbar ref={topbarRef} />
                 <div ref={sidebarRef} className="layout-sidebar">
-                    <AppSidebar />
+                    <AppSidebar setShowModules={setShowModules} /> {/* Pasamos el prop setShowModules */}
                 </div>
                 <div className="layout-main-container">
-                    <div className="layout-main">{children}</div>
+                    <div className="layout-main">
+                        {showModules ? <Modules modulos={modulos} /> : children}
+                    </div>
                     <AppFooter />
                 </div>
                 <div className="layout-mask"></div>
             </div>
-        </React.Fragment>);
+        </React.Fragment>
+        );
 };
 
 export default Layout;
