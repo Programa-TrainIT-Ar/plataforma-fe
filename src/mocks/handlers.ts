@@ -4,38 +4,70 @@ const participants = [
     {
         firstName: "Valentina",
         lastName: "Herrera",
-        cells: ["YYY", "XXX" ]
+        email: "valentinaherrera@gmail.com",
+        cells: ["IT"]
     },
     {
         firstName: "Santiago",
         lastName: "Lopez",
-        cells: ["YYY", "XXX" ]
+        email: "santiagolopez@gmail.com",
+        cells: ["IT"]
     },
     {
         firstName: "Isabela",
         lastName: "Chavez",
-        cells: ["YYY", "XXX" ]
+        email: "isabelac@gmail.com",
+        cells: ["Marketing", "RRHH", "ZZZ"]
     },
     {
         firstName: "Mateo",
         lastName: "Rodriguez",
-        cells: ["YYY", "XXX" ]
+        email: "mateorodriguez@gmail.com",
+        cells: ["IT", "RRHH" ]
     },
     {
         firstName: "Sofia",
         lastName: "Ramirez",
-        cells: ["YYY", "XXX" ]
+        email: "sofiaramirez@gmail.com",
+        cells: ["IT", "Marketing" ]
     },
     {
         firstName: "Juan",
         lastName: "Perez",
-        cells: ["ASD", "ZXC" ]
+        email: "jp@gmail.com",
+        cells: ["Marketing", "IT" ]
     },
     {
         firstName: "Diego",
         lastName: "Armando",
-        cells: ["QWE", "ASD" ]
+        email: "eldiego@gmail.com",
+        cells: ["RRHH", "IT", "Marketing" ]
     },
+]
+
+const cells = [
+    {
+        name: "IT",
+        description: "celula de sistemas",
+        module: "frontend",
+        edition: "2024"
+    },
+    {
+        name: "IT",
+        description: "celula de sistemas",
+        module: "backend",
+        edition: "2024"
+    },    {
+        name: "Marketing",
+        description: "celula de Marketing",
+        module: "ux/ui",
+        edition: "2024"
+    },    {
+        name: "RRHH",
+        description: "celula de Recursos Humanos",
+        module: "recruiting",
+        edition: "2024"
+    }
 ]
 
 export const handlers = [
@@ -46,7 +78,10 @@ export const handlers = [
             lastName: 'Maverick',
         });
     }),
-    http.get('https://api.example.com/participantes', () => {
+    http.get('https://api.example.com/participants', () => {
         return HttpResponse.json(Array.from(participants.values()));
+    }),
+    http.get('https://api.example.com/cells', () => {
+        return HttpResponse.json(Array.from(cells.values()));
     }),
 ];
