@@ -18,7 +18,8 @@ export interface Cell {
     name: string,
     description: string,
     module: string,
-    edition: string
+    project: string,
+    edition: string,
 }
 
 const ParticipantsTable: React.FC<{participants: Participant[], cells: Cell[]}> = ({participants, cells}) => {
@@ -29,9 +30,6 @@ const ParticipantsTable: React.FC<{participants: Participant[], cells: Cell[]}> 
         email: "",
         cells: [""]
     });
-
-    console.log('participants en table', participants)
-    console.log('cells en table', cells)
 
     const showOverlayPanel = (e: any, rowData: Participant) => {
         setSelectedParticipant(rowData);
@@ -58,13 +56,8 @@ const ParticipantsTable: React.FC<{participants: Participant[], cells: Cell[]}> 
                 />
             </DataTable>
 
-            <OverlayPanel ref={op} >
+            <OverlayPanel ref={op} closeOnEscape className='p-0'>
                 <CellsModal participant={selectedParticipant} cells={cells}/>
-                {/* <ul>
-                    {selectedParticipant?.cells?.map((cell, index) => (
-                        <li key={index}>{cell}</li>
-                    ))}
-                </ul> */}
             </OverlayPanel>
         </div>
     )
