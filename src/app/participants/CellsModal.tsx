@@ -7,11 +7,11 @@ const CellsModal: React.FC<{ participant: Participant, cells: Cell[] }> = ({ par
     // const cells = await getCells();
 
     return (
-        <>
+        <div className='flex flex-column gap-4'>
             {participant?.cells?.map((cell, index) => {
                 const cellParticipant = cells.find((c) => (c.name === cell))
                 return (
-                    <Fieldset toggleable legend={cell} key={index}>
+                    <Fieldset toggleable legend={cell} key={index} collapsed>
                         <ul className='list-none p-0'>
                             <li><b>Module: </b>{cellParticipant?.module}</li>
                             <li><b>Project: </b>{cellParticipant?.project}</li>
@@ -20,7 +20,7 @@ const CellsModal: React.FC<{ participant: Participant, cells: Cell[] }> = ({ par
                     </Fieldset>
                 )
             })}
-        </>
+        </div>
     )
 }
 
