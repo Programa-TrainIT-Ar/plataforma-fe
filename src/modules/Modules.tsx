@@ -11,9 +11,21 @@ interface Modulo {
 
 interface ModulosProps {
   modulos: Modulo[];
+  proyectos: Proyectos[];
+  
 }
 
-const Modules: React.FC<ModulosProps> = ({ modulos }) => {
+
+interface Proyectos {
+  name: string;
+  id: string;
+}
+
+
+
+
+
+const Modules: React.FC<ModulosProps> = ({ modulos, proyectos }) => {
   return (
     <div className="modulos-container">
       <div className='grid'>
@@ -51,14 +63,17 @@ const Modules: React.FC<ModulosProps> = ({ modulos }) => {
       </div>
 
       </div>
-         
       <Accordion multiple activeIndex={[0]}>
-      {modulos.map(modulo => (
-        <AccordionTab className='accordion-modulo' key={modulo.id} header={modulo.name}>
-          <p className="m-0">prueba</p>
-        </AccordionTab>
-      ))}
-    </Accordion>
+        {modulos && modulos.map(modulo => (
+          <AccordionTab className='accordion-modulo' key={modulo.id} header={modulo.name}>
+            
+            <p className="m-0">+ Nuevo proyecto</p>
+            <p className="m-0">- Proyecto 1</p>
+            <p className="m-0">- Proyecto 2</p>
+            <p className="m-0">- Proyecto 3</p>
+            </AccordionTab>
+        ))}
+      </Accordion>
     </div>
   );
 };

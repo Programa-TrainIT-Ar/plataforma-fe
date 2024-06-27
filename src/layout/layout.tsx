@@ -110,12 +110,27 @@ const Layout = ({ children }: ChildContainerProps) => {
  // Estado para mostrar los módulos
  const [showModules, setShowModules] = useState(false);
 
- // Array de módulos hasta que este mock 
+ // Array de módulos hasta que este mock / api
  const modulos = [
      { id: 'a', name: 'Sistemas',},
      { id: 'b', name: 'Marketing',},
-     { id: 'c', name: 'Educación'}
+     { id: 'c', name: 'Educación'},
  ];
+
+ const proyectos = [
+    {id: "a", name: "Proyecto1"},
+    {id: "b", name: "Proyecto2"},
+    {id: "c", name: "Proyecto3"},
+
+]
+
+const ediciones = [
+    {id: "a", name: "Edicion1"},
+    {id: "b", name: "Edicion2"},
+    {id: "c", name: "Edicion3"},
+
+]
+
 
 
     return (
@@ -127,7 +142,7 @@ const Layout = ({ children }: ChildContainerProps) => {
                 </div>
                 <div className="layout-main-container">
                     <div className="layout-main">
-                        {showModules ? <Modules modulos={modulos} /> : children}
+                        {showModules ? <Modules modulos={modulos} proyectos={proyectos} /> : children}
                     </div>
                     <AppFooter />
                 </div>
