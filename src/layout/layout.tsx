@@ -118,16 +118,16 @@ const Layout = ({ children }: ChildContainerProps) => {
  ];
 
  const proyectos = [
-    {id: "a", name: "Proyecto1"},
-    {id: "b", name: "Proyecto2"},
-    {id: "c", name: "Proyecto3"},
+    {id: "a", name: "Plataforma Trainit"},
+    {id: "b", name: "MKR1"},
+    {id: "c", name: "Challenge Trainit"},
 
 ]
 
 const ediciones = [
-    {id: "a", name: "Edicion1"},
-    {id: "b", name: "Edicion2"},
-    {id: "c", name: "Edicion3"},
+    {id: "a", name: "2022"},
+    {id: "b", name: "2023"},
+    {id: "c", name: "2024"},
 
 ]
 
@@ -142,7 +142,7 @@ const ediciones = [
                 </div>
                 <div className="layout-main-container">
                     <div className="layout-main">
-                        {showModules ? <Modules modulos={modulos} proyectos={proyectos} /> : children}
+                        {showModules ? <Modules modulos={modulos} proyectos={proyectos} ediciones={ediciones} /> : children}
                     </div>
                     <AppFooter />
                 </div>

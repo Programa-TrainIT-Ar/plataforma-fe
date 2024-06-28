@@ -2,30 +2,37 @@ import React from 'react';
 import "../styles/modules style/modules-style.scss";
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Dropdown } from 'primereact/dropdown';
+import Modulo from "@types/modulo";
+import Proyectos from "@types/proyecto";
+import Ediciones from "@types/ediciones";
 
 
-interface Modulo {
+
+/* interface Modulo {
   id: string;
   name: string;
-}
+} */
 
 interface ModulosProps {
   modulos: Modulo[];
   proyectos: Proyectos[];
-  
+  ediciones: Ediciones[];  
 }
 
-
+/* 
 interface Proyectos {
   name: string;
   id: string;
 }
 
+interface Ediciones {
+  name: string;
+  id: string;
+} */
 
 
 
-
-const Modules: React.FC<ModulosProps> = ({ modulos, proyectos }) => {
+const Modules: React.FC<ModulosProps> = ({ modulos, proyectos, ediciones }) => {
   return (
     <div className="modulos-container">
       <div className='grid'>
@@ -68,9 +75,17 @@ const Modules: React.FC<ModulosProps> = ({ modulos, proyectos }) => {
           <AccordionTab className='accordion-modulo' key={modulo.id} header={modulo.name}>
             
             <p className="m-0">+ Nuevo proyecto</p>
-            <p className="m-0">- Proyecto 1</p>
-            <p className="m-0">- Proyecto 2</p>
-            <p className="m-0">- Proyecto 3</p>
+            {proyectos.map( proyecto =>(
+            <Accordion multiple activeIndex={[0]}>  
+            <AccordionTab className='accordion-modulo' key={proyecto.id} header={proyecto.name}>
+            {ediciones.map(ediciones =>(
+              <p className="m-0">- {ediciones.name} </p>
+            ))}
+            
+            </AccordionTab>
+            </Accordion>
+            ))}
+            
             </AccordionTab>
         ))}
       </Accordion>

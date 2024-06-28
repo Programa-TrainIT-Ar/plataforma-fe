@@ -32,17 +32,17 @@ export const handlers = [
         });
     }),
 
-    http.get('http://localhost:3001/modules', () => {
+    http.get('https://api.example.com/modules', () => {
         return HttpResponse.json(Array.from(modulos.values()));
     }),
 
 
-    http.get('http://localhost:3001/modules/:id/projects', () => {
+    http.get('https://api.example.com/modules/:id/projects', () => {
         return HttpResponse.json(Array.from(proyectos.values()));
     }),
 
     
-    http.get('http://localhost:3001/projects/:id/editions', () => {
+    http.get('https://api.example.com/projects/:id/editions', () => {
         return HttpResponse.json(Array.from(ediciones.values()));
     }),
 
