@@ -4,29 +4,26 @@ import AppMenuitem from './AppMenuitem';
 import { MenuProvider } from './context/menucontext';
 import { AppMenuItem } from '@/types';
 
-  
-  const AppMenu = ({setShowModules}: {setShowModules: (show: boolean) => void}) => {
-    
-    //simulando mostrar modulos solo cuando se clickea esa seccion, usando setShowModules
-    const model: AppMenuItem[] = [{
+const AppMenu = () => {
 
-        label: '', items: [
-            { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
-            { label: 'Modulos', icon: 'pi pi-fw pi-sitemap', to: '/modules'},
-        { label: 'Participantes', icon: 'pi pi-fw pi-user', to: '/participants' }
-        ]
-    }];
+  const model: AppMenuItem[] = [{
+    label: '', items: [
+      { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+      { label: 'Modulos', icon: 'pi pi-fw pi-sitemap', to: '/modules' },
+      { label: 'Participantes', icon: 'pi pi-fw pi-user', to: '/participants' }
+    ]
+  }];
 
 
-    return (<MenuProvider>
+  return (<MenuProvider>
 
-        <ul className="layout-menu">
-            {model.map((item, i) => {
-                return !item?.seperator ? <AppMenuitem item={item} root={true} index={i} key={item.label} /> :
-                    <li className="menu-separator"></li>;
-            })}
-        </ul>
-    </MenuProvider>);
+    <ul className="layout-menu">
+      {model.map((item, i) => {
+        return !item?.seperator ? <AppMenuitem item={item} root={true} index={i} key={item.label} /> :
+          <li className="menu-separator"></li>;
+      })}
+    </ul>
+  </MenuProvider>);
 
 };
 

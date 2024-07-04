@@ -1,4 +1,4 @@
-interface Ediciones {
-    name: string;
-    id: string;
-  }
+export default interface Ediciones {
+  id: string;
+  name: string;
+}

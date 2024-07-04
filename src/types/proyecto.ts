@@ -1,5 +1,4 @@
-
-interface Proyectos {
-    name: string;
-    id: string;
-  }
+export default interface Proyectos {
+  id: string;
+  name: string;
+}
