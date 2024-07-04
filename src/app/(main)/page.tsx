@@ -1,20 +1,20 @@
+'use client'
+
+import { useUser } from '@auth0/nextjs-auth0/client';
+import Link from 'next/link';
 import React from 'react';
 
-async function getUser() {
-    const res = await fetch('https://api.example.com/user');
-    if (!res.ok) {
-        // This will activate the closest `error.ts` Error Boundary
-        throw new Error('Failed to fetch data');
-    }
-    return res.json() as any;
-}
+const Dashboard = () => {
+  const { user, error, isLoading } = useUser()
 
-const Dashboard = async () => {
-    const user = await getUser();
-    return (<div className="grid">
-        DASHBOARD
-        {JSON.stringify(user)}
-    </div>);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+  if (!user) return <Link href="/api/auth/login">Login</Link>;
+  return (<div className="flex flex-column">
+    DASHBOARD
+    <div>Hello {user.nickname}</div>
+    <Link href="/api/auth/logout">Logout</Link>
+  </div>);
 };
 
 export default Dashboard;
