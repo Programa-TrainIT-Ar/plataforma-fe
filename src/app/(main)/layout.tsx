@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import Layout from '../../layout/layout';
+import { AppLayoutProps } from '@/types/layout';
 
-interface AppLayoutProps {
-    children: React.ReactNode;
-}
 
 export const metadata: Metadata = {
     title: 'Plataforma',

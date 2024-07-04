@@ -3,6 +3,10 @@ import { NextPage } from 'next';
 import { Demo } from './demo';
 import { Toast } from 'primereact/toast';
 
+export interface AppLayoutProps {
+    children: React.ReactNode;
+}
+
 /* Breadcrumb Types */
 export interface AppBreadcrumbProps {
     className?: string;
