@@ -3,7 +3,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEventListener, useUnmountEffect } from 'primereact/hooks';
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
 import AppFooter from './AppFooter';
 import AppSidebar from './AppSidebar';
@@ -11,7 +11,6 @@ import AppTopbar from './AppTopbar';
 import { LayoutContext } from './context/layoutcontext';
 import { AppTopbarRef, ChildContainerProps, LayoutState } from '@/types';
 import { PrimeReactContext } from 'primereact/api';
-import Modules from "../app/modules/page";
 
 
 const Layout = ({ children }: ChildContainerProps) => {
