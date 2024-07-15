@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@auth0/nextjs-auth0": "^3.5.0",
+        "axios": "^1.7.2",
         "next": "15.0.0-rc.0",
         "primeflex": "^3.3.1",
         "primeicons": "^6.0.1",
