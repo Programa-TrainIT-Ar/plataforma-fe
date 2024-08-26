@@ -21,9 +21,9 @@ export default function Providers({ children, accessToken }: ProvidersProps) {
   return (
     <UserProvider>
       <LayoutProvider>
-        <MockProvider>
+        {/* <MockProvider> */}
             {initialized ? children : <>Initializing...</>}
-        </MockProvider>
+        {/* </MockProvider> */}
       </LayoutProvider>
     </UserProvider>
   );

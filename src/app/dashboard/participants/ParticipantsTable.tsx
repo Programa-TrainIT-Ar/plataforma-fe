@@ -9,7 +9,7 @@ import CellsFieldset from './CellsFieldset';
 import Cell from '@/types/cell';
 import Participant from '@/types/participant';
 
-const ParticipantsTable: React.FC<{ participants: Participant[], cells?: Cell[] }> = ({ participants, cells }) => {
+const ParticipantsTable: React.FC<{ participants?: Participant[], cells?: Cell[] }> = ({ participants, cells }) => {
   const op = useRef<OverlayPanel>(null);
   const [selectedParticipant, setSelectedParticipant] = useState<Participant>({
     firstName: '', lastName: '', email: '', cells: ['']

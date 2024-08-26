@@ -1,9 +1,11 @@
 import React from 'react';
 import ParticipantsTable from './ParticipantsTable';
-import ParticipantsService from '@/services/ParticipantService';
+import { getParticipantsAxios } from '@/services/ParticipantService';
 
 const Participants = async () => {
-  const participants = await ParticipantsService.getParticipants();
+  const participants = await getParticipantsAxios();
+
+  console.log('participants', participants)
 
   return (
     <>
