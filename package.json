@@ -14,8 +14,8 @@
         "primeflex": "^3.3.1",
         "primeicons": "^6.0.1",
         "primereact": "^10.6.6",
-        "react": "19.0.0-rc-8971381549-20240625",
-        "react-dom": "19.0.0-rc-8971381549-20240625",
+        "react": "19.0.0-rc-d1afcb43-20240903",
+        "react-dom": "19.0.0-rc-d1afcb43-20240903",
         "react-transition-group": "^4.4.5",
         "typescript": "5.1.3"
     },
