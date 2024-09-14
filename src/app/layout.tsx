@@ -7,6 +7,7 @@ import 'primeicons/primeicons.css';
 import '../styles/layout/layout.scss';
 import '../styles/demo/Demos.scss';
 import { MockProvider } from '@/mockProvider';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -18,13 +19,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <link id="theme-css" href={`/themes/bootstrap4-dark-purple/theme.css`} rel="stylesheet"></link>
         </head>
         <body>
-        <PrimeReactProvider>
-            <LayoutProvider>
-                <MockProvider>
-                    {children}
-                </MockProvider>
-            </LayoutProvider>
-        </PrimeReactProvider>
+            <PrimeReactProvider>
+                <UserProvider>
+                    <LayoutProvider>
+                        <MockProvider>
+                            {children}
+                        </MockProvider>
+                    </LayoutProvider>
+                </UserProvider>
+            </PrimeReactProvider>
         </body>
-        </html>);
+    </html>);
 }
