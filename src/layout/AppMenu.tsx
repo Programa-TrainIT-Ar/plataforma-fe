@@ -8,7 +8,8 @@ const AppMenu = () => {
     const model: AppMenuItem[] = [{
         label: '', items: [
             { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
-            { label: 'Participantes', icon: 'pi pi-fw pi-user', to: '/participants' }
+            { label: 'Participantes', icon: 'pi pi-fw pi-user', to: '/participants' },
+            { label: 'Proyectos', icon: 'pi pi-fw pi-folder-open', to: '/projects' }
         ]
     }];
 
