@@ -31,7 +31,7 @@ export const handlers = [http.get('https://api.example.com/user', () => {
         firstName: 'John', lastName: 'Maverick'
     });
 }), http.get('https://api.example.com/participantes', async () => {
-    await delay(3000);
+    await delay(5000);
     return HttpResponse.json(Array.from(participantes.values()));
 }), http.get('https://api.example.com/celulas', () => {
     return HttpResponse.json(Array.from(cells.values()));
