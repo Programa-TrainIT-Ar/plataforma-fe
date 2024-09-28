@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { LayoutProvider } from '@/layout/context/layoutcontext';
 import { MockProvider } from '@/mockProvider';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { setAuthToken } from './AuthToken';
+import { setAuthToken } from '@/services/TrainItClient';
 
 interface ProvidersProps {
   children: React.ReactNode;

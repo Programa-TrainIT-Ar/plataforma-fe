@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div>
       <h1>Main</h1>
-      <Link href={'/dashboard'}>
+      <Link href={'/intra/dashboard'}>
         <Button label='Plataforma TrainIT' />
       </Link>
     </div>

@@ -82,7 +82,7 @@ const Layout = ({ children }: ChildContainerProps) => {
     }
 
     layoutState.staticMenuMobileActive && blockBodyScroll();
-  }, [layoutState.overlayMenuActive, layoutState.staticMenuMobileActive]);
+  }, [layoutState?.overlayMenuActive, layoutState?.staticMenuMobileActive]);
 
   useEffect(() => {
     if (layoutState.profileSidebarVisible) {
