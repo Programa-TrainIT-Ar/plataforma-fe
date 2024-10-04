@@ -7,7 +7,11 @@ import { AppMenuItem } from '@/types';
 
 const AppMenu = () => {
     const model: AppMenuItem[] = [{
-        label: 'Home', items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
+        label: 'Home', items: [
+            { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+            { label: 'Modules', icon: 'pi pi-share-alt', to: '/modulos' }
+            
+]
     }];
 
     return (<MenuProvider>
