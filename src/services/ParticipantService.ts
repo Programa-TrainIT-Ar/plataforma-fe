@@ -4,7 +4,7 @@ import { axiosInstance } from '@/services/TrainItClient';
 const ParticipantsService = {
     getParticipants: async () => {
         const response = await axiosInstance.get<Participant[]>('https://api.example.com/participantes');
-        return response.data ;
+        return Promise.resolve([]);
     },
   createParticipant: async (participant: Participant) => {
       return await axiosInstance.post<Participant>('https://api.example.com/participantes', participant);

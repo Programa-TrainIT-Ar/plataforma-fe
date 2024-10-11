@@ -9,7 +9,7 @@ const AppMenu = () => {
         label: '', items: [
             { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/intra/dashboard' },
             { label: 'Participantes', icon: 'pi pi-fw pi-user', to: '/intra/participants' },
-            { label: 'modules', icon: 'pi pi-fw pi-user', to: '/intra/modules' }
+            { label: 'Módulos', icon: 'pi pi-fw pi-share-alt', to: '/intra/modules' }
         ]
     }];
 
