@@ -1,8 +1,10 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
         instrumentationHook: true,
     },
+
     webpack(config, { isServer }) {
         /**
          * @fixme This is completely redundant. webpack should understand
